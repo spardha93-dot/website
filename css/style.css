@@ -366,10 +366,12 @@ section + section {
   letter-spacing: 0.04em;
 }
 
-/* placeholder gradient thumbnails, sized to create masonry rhythm */
+/* thumbnails sized to create masonry rhythm */
 .thumb {
   width: 100%;
+  height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .thumb-1 { aspect-ratio: 4 / 5; }
@@ -378,15 +380,6 @@ section + section {
 .thumb-4 { aspect-ratio: 16 / 10; }
 .thumb-5 { aspect-ratio: 4 / 3; }
 .thumb-6 { aspect-ratio: 9 / 12; }
-
-.g1 { background: linear-gradient(150deg, #d9c7b4, #a9825f); }
-.g2 { background: linear-gradient(150deg, #cbd3c9, #7a8f78); }
-.g3 { background: linear-gradient(150deg, #e3d5c2, #b5502f); }
-.g4 { background: linear-gradient(150deg, #d7ded9, #8fa39c); }
-.g5 { background: linear-gradient(150deg, #e9e2d6, #c2a888); }
-.g6 { background: linear-gradient(150deg, #ded6cb, #5f5a52); }
-.g7 { background: linear-gradient(150deg, #c9bfae, #706354); }
-.g8 { background: linear-gradient(150deg, #e6e6e0, #9aa39a); }
 
 /* ---------- Filters ---------- */
 
@@ -613,6 +606,91 @@ section + section {
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+/* ---------- About ---------- */
+
+.about { border-bottom: 1px solid var(--color-line); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  filter: grayscale(1) contrast(1.05);
+  border: 1px solid var(--color-line);
+}
+
+.about-body h2 { font-size: 1.9rem; }
+
+.about-body .lede {
+  font-size: 1.02rem;
+  color: var(--color-ink-soft);
+  max-width: 62ch;
+}
+
+.quote {
+  margin: 1.75rem 0 0;
+  padding: 1.25rem 0 1.25rem 1.5rem;
+  border-left: 3px solid var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-ink);
+  max-width: 58ch;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-soft);
+}
+
+.about-stats {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1.5rem 3rem;
+}
+
+.about-stats dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink-soft); margin-bottom: 0.25rem; }
+.about-stats dd { margin: 0; font-weight: 600; font-family: var(--font-display); font-size: 1.05rem; }
+
+@media (max-width: 700px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .portrait { max-width: 220px; }
+  .about-stats { grid-template-columns: repeat(2, auto); }
+}
+
+/* ---------- Text-only card (publications, in the masonry grid) ---------- */
+
+.card-text {
+  background: var(--color-ink);
+  color: #f4ede7;
+  padding: 1.6rem 1.5rem;
+}
+
+.card-text .card-tag {
+  position: static;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.14);
+  margin-bottom: 0.9rem;
+}
+
+.card-text h3 { font-size: 1.05rem; color: #fff; margin-bottom: 0.4rem; }
+.card-text p { font-size: 0.86rem; color: #cfc6bc; margin-bottom: 0; }
+.card-text .card-meta { color: #a89f93; }
 
 /* ---------- Page header (Projects / Writing) ---------- */
 
