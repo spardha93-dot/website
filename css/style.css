@@ -688,6 +688,25 @@ section + section {
   .about-stats { grid-template-columns: repeat(2, auto); }
 }
 
+/* ---------- Pending-image card (project added before artwork is in hand) ---------- */
+
+.card-pending .card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.card-pending .pending-label {
+  font-size: 0.76rem;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 /* ---------- Text-only card (publications, in the masonry grid) ---------- */
 
 .card-text {
