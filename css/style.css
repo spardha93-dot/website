@@ -448,8 +448,23 @@ section + section {
 .article-row p {
   font-size: 0.92rem;
   color: var(--color-ink-soft);
-  margin: 0;
+  margin: 0 0 0.5em;
   max-width: 60ch;
+}
+
+.article-row p:last-child {
+  margin-bottom: 0;
+}
+
+.article-link {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.article-link:hover {
+  text-decoration: underline;
 }
 
 .article-arrow {
