@@ -659,20 +659,9 @@ section + section {
   max-width: 56ch;
 }
 
-.about-stats {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 1.5rem 3rem;
-}
-
-.about-stats dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink-soft); margin-bottom: 0.25rem; }
-.about-stats dd { margin: 0; font-weight: 600; font-family: var(--font-display); font-size: 1.05rem; }
-
 @media (max-width: 700px) {
   .about-grid { grid-template-columns: 1fr; }
   .portrait { max-width: 220px; }
-  .about-stats { grid-template-columns: repeat(2, auto); }
 }
 
 /* ---------- Pending-image card (project added before artwork is in hand) ---------- */
