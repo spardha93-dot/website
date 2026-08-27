@@ -638,7 +638,6 @@ section + section {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: var(--radius);
-  filter: grayscale(1) contrast(1.05);
   border: 1px solid var(--color-line);
 }
 
