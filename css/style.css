@@ -650,26 +650,14 @@ section + section {
   max-width: 62ch;
 }
 
-.quote {
+.excerpt {
   margin: 1.75rem 0 0;
-  padding: 1.25rem 0 1.25rem 1.5rem;
-  border-left: 3px solid var(--color-accent);
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.45;
+  font-weight: 500;
   color: var(--color-ink);
-  max-width: 58ch;
-}
-
-.quote cite {
-  display: block;
-  margin-top: 0.6rem;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-ink-soft);
+  max-width: 56ch;
 }
 
 .about-stats {
