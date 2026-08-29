@@ -791,3 +791,94 @@ section + section {
     padding-top: 1.5rem;
   }
 }
+
+/* ---------- Project detail pages ---------- */
+
+.detail-head {
+  padding: 3rem 0 2.5rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  margin-bottom: 2rem;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.detail-tag {
+  margin-bottom: 0.75rem;
+}
+
+.detail-head h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  max-width: 24ch;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1rem;
+}
+
+.detail-hero {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 640px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+}
+
+.detail-body {
+  max-width: 68ch;
+  font-size: 1.04rem;
+  color: var(--color-ink-soft);
+  line-height: 1.75;
+  margin-top: 2.5rem;
+}
+
+.detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.detail-gallery figure {
+  margin: 0;
+}
+
+.detail-gallery img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+  display: block;
+}
+
+.detail-gallery figcaption {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  margin-top: 0.6rem;
+}
+
+.detail-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-line);
+}
