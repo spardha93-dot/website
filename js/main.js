@@ -34,6 +34,12 @@ if (filterButtons.length && filterableCards.length) {
       });
     });
   });
+
+  const hashFilter = window.location.hash.replace("#", "");
+  if (hashFilter) {
+    const targetBtn = document.querySelector(`.filter-btn[data-filter="${hashFilter}"]`);
+    if (targetBtn) targetBtn.click();
+  }
 }
 
 // Contact form validation + submission

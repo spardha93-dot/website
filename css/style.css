@@ -554,6 +554,11 @@ section + section {
   margin-bottom: 0.4rem;
 }
 
+.field label .optional {
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
 .field input,
 .field select,
 .field textarea {
@@ -881,4 +886,235 @@ section + section {
   margin-top: 3.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--color-line);
+}
+
+/* ---------- Sector teasers (Home) ---------- */
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.sector-card {
+  display: block;
+  padding: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.sector-card:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.sector-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.sector-card p {
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.sector-card .sector-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+@media (max-width: 700px) {
+  .sector-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Credibility strip ---------- */
+
+.cred-strip {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.cred-strip .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.cred-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.cred-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+
+/* ---------- CTA band ---------- */
+
+.cta-band {
+  background: var(--color-ink);
+  color: #f4ede7;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-band h2 {
+  color: #fff;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 0.75rem;
+}
+
+.cta-band p {
+  color: #cfc6bc;
+  max-width: 50ch;
+  margin: 0 auto 1.75rem;
+  font-size: 1.02rem;
+}
+
+.cta-band .btn-primary {
+  background: var(--color-accent);
+}
+
+.cta-band .btn-primary:hover {
+  background: #cf6539;
+}
+
+/* ---------- Services page ---------- */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.service-pillar h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.service-pillar > p {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.service-list li {
+  padding-left: 1.4rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  line-height: 1.5;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+@media (max-width: 800px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  counter-reset: process;
+}
+
+.process-step {
+  position: relative;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--color-line);
+}
+
+.process-step::before {
+  counter-increment: process;
+  content: counter(process, decimal-leading-zero);
+  position: absolute;
+  top: -0.85em;
+  left: 0;
+  background: var(--color-bg);
+  padding-right: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.process-step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .process-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Teaching block (About) ---------- */
+
+.teaching-block {
+  margin-top: 3rem;
+  padding: 1.75rem;
+  background: var(--color-accent-soft);
+  border-radius: var(--radius);
+}
+
+.teaching-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.teaching-block p {
+  font-size: 0.94rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 0;
+}
+
+.teaching-block p:last-child {
+  margin-bottom: 0;
+}
+
+.teaching-block a {
+  color: var(--color-accent);
+  font-weight: 600;
 }

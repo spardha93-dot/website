@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Spardha Angra</title>
-  <meta name="description" content="Get in touch with Spardha Angra about architecture, interior design, workplace strategy, or a press and speaking inquiry." />
+  <title>Contact — Spardha Angra, Interior Design Consultant</title>
+  <meta name="description" content="Get in touch with Spardha Angra about a workplace or hospitality interior design project, a design review, or a teaching inquiry." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -17,7 +17,9 @@
       <a href="index.html" class="brand">Spardha <span>Angra</span></a>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
         <a href="contact.html" class="is-active">Contact</a>
       </nav>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -32,9 +34,9 @@
         <p class="eyebrow">Let's talk.</p>
         <h1>Contact</h1>
         <p>
-          Reach out for architecture, interior design, workplace strategy, or
-          press and speaking inquiries — I'll get back to you within a couple
-          of days.
+          Reach out about a workplace or hospitality interior design project,
+          a design review for your in-house team, or a teaching inquiry —
+          I'll get back to you within a couple of days.
         </p>
       </div>
     </section>
@@ -81,9 +83,32 @@
               </div>
             </div>
 
+            <div class="form-row">
+              <div class="field">
+                <label for="company">Company <span class="optional">(optional)</span></label>
+                <input type="text" id="company" name="company" placeholder="Your company or brand" />
+              </div>
+              <div class="field">
+                <label for="sector">Project type <span class="optional">(optional)</span></label>
+                <select id="sector" name="sector">
+                  <option value="">Select one</option>
+                  <option value="workplace">Workplace / Corporate office</option>
+                  <option value="hospitality">Hospitality / Retail</option>
+                  <option value="review">Design review / Advisory</option>
+                  <option value="teaching">Teaching / Speaking</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="timeline">Timeline <span class="optional">(optional)</span></label>
+              <input type="text" id="timeline" name="timeline" placeholder="e.g. Planning to start in Q1 2027" />
+            </div>
+
             <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me a bit about your project or inquiry." required></textarea>
+              <textarea id="message" name="message" placeholder="Tell me a bit about your project — scope, location, and what you're trying to solve." required></textarea>
               <span class="error">Please share a few more details.</span>
             </div>
 
@@ -101,7 +126,9 @@
     <div class="wrap footer-grid">
       <p class="copyright">© 2026 Spardha Angra. All rights reserved.</p>
       <nav class="footer-links">
-        <a href="projects.html">Projects</a>
+        <a href="projects.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
