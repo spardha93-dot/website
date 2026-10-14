@@ -30,10 +30,10 @@ const PAGE_MAX_BYTES = 2_000_000;
 // a leading * lets it end a German compound ("*tickets" matches "Tagestickets").
 // JS's own \b only understands ASCII, so it can't be used next to ä/ö/ü/ß.
 export function words(list) {
-  const alts = list.split("|").map(t => t.trim()).filter(Boolean)
-    .map(t => (t.startsWith("*") ? "\\p{L}*" + t.slice(1) : t))
-    .map(t => (t.endsWith("*") ? t.slice(0, -1) + "\\p{L}*" : t));
-  return new RegExp(`(?<![\\p{L}\\p{N}])(?:${alts.join("|")})(?![\\p{L}\\p{N}])`, "iu");
+  const src = list
+    .replace(/([a-zäöüß])\*/gi, "$1\\p{L}*")          // "konzert*"  -> any ending
+    .replace(/(^|\||\(\?:|\()\*/g, "$1\\p{L}*");        // "*tickets"  -> any beginning
+  return new RegExp(`(?<![\\p{L}\\p{N}])(?:${src})(?![\\p{L}\\p{N}])`, "iu");
 }
 const mapWords = obj => Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, words(v)]));
 
@@ -62,9 +62,10 @@ export const METHODS = mapWords({
   facebook: "facebook*|fb",
   tiktok: "tiktok*",
   reddit: "reddit",
-  email: "e-?mail*|mail an|per mail|newsletter*",
+  // Entering by email, not just an "E-Mail-Adresse" field in a form.
+  email: "(?:e-?)?mail an|per (?:e-?)?mail|e-?mail mit (?:dem )?(?:betreff|stichwort|kennwort)|schick\\p{L}* (?:uns |eine |ihre |deine )*e-?mail|schreib\\p{L}* (?:uns |eine |einfach )*e-?mail|betreff",
   postcard: "postkarte*|postcard*|per post|einsenden",
-  phone: "anrufen|anruf|hotline|telefon*|sms|whatsapp",
+  phone: "anrufen|ruf\\p{L}* (?:\\p{L}+ ){0,3}an|gewinnhotline|hotline|telefonisch|per sms|sms mit|whatsapp an|unter der (?:rufnummer|telefonnummer|nummer)",
   website: "formular*|teilnahmeformular*|website|webseite|online teilnehmen|hier teilnehmen|gleam|gewinnspielseite|enter (?:here|online|now)|landingpage|online-gewinnspiel",
 });
 
@@ -72,8 +73,10 @@ export const METHODS = mapWords({
 export const ACTIONS = mapWords({
   comment: "kommentier*|kommentar*|comment*",
   like: "like|likes|liken|liked|gefällt mir",
-  follow: "folg*|follow*|abonnier*|abo|subscribe*",
-  tag: "markier*|verlink*|tag(?:ge)? (?:a |\\d |your |deine? )?(?:friends?|freund*)|tag \\d",
+  // "folgende" (the following) is not a follow.
+  follow: "folge|folgt|folgst|folgen sie|folgen|folgt uns|follow*|abonnier*|abonnent*|subscribe*",
+  // Tagging people, not "mit * markierte Felder".
+  tag: "(?:markier|verlink)\\p{L}* (?:\\p{L}+ ){0,3}(?:freund\\p{L}*|person\\p{L}*|jemand\\p{L}*|begleit\\p{L}*|liebsten|\\d)|tag(?:ge)? (?:a |\\d |your |deine? )?(?:friends?|freund*)|tag \\d",
   share: "teilen|teilt|share*|repost*|retweet*|story",
   answer: "beantworte*|gewinnfrage|frage|quiz*|answer*|lösungswort*|rätsel*",
   form: "formular*|registrier*|anmelden|sign ?up",
@@ -301,6 +304,14 @@ async function fetchPage(url) {
 
 // Google News RSS links point at news.google.com, not the article. Older ids embed the URL;
 // newer ones ("AU_yqL…") have to be exchanged through Google's own decoding endpoint.
+// Google refuses bursts, so its requests go one at a time with a pause in between.
+let googleGate = Promise.resolve();
+function viaGoogle(fn) {
+  const run = googleGate.then(fn);
+  googleGate = run.catch(() => {}).then(() => new Promise(r => setTimeout(r, 1200)));
+  return run;
+}
+
 export async function resolveGoogleNews(url) {
   const m = url.match(/news\.google\.com\/(?:rss\/)?articles\/([^?#]+)/);
   if (!m) return url;
@@ -310,6 +321,10 @@ export async function resolveGoogleNews(url) {
     const direct = raw.match(/https?:\/\/[\x21-\x7e]+/);
     if (direct && !raw.includes("AU_yqL")) return direct[0];
   } catch {}
+  return viaGoogle(() => decodeGoogleId(id));
+}
+
+async function decodeGoogleId(id) {
   const { html } = await fetchPage(`https://news.google.com/articles/${id}?hl=de&gl=DE&ceid=DE:de`);
   const sig = (html.match(/data-n-a-sg="([^"]+)"/) || [])[1];
   const ts = (html.match(/data-n-a-ts="([^"]+)"/) || [])[1];
