@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Google News · Gewinnspiele",
+    "url": "https://news.google.com/rss/search?q=Gewinnspiel+when:3d&hl=de&gl=DE&ceid=DE:de",
+    "region": "DE"
+  },
+  {
+    "name": "Google News · Verlosungen",
+    "url": "https://news.google.com/rss/search?q=verlosen+OR+Verlosung+when:3d&hl=de&gl=DE&ceid=DE:de",
+    "region": "DE"
+  },
+  {
+    "name": "Google News · Tickets & Konzerte",
+    "url": "https://news.google.com/rss/search?q=(Tickets+OR+Freikarten+OR+Konzert)+gewinnen+when:7d&hl=de&gl=DE&ceid=DE:de",
+    "region": "DE"
+  },
+  {
+    "name": "Google News · Übernachtungen & Reisen",
+    "url": "https://news.google.com/rss/search?q=(%C3%9Cbernachtung+OR+Hotel+OR+Reise)+Gewinnspiel+when:7d&hl=de&gl=DE&ceid=DE:de",
+    "region": "DE"
+  },
+  {
+    "name": "Google News · Erlebnisse",
+    "url": "https://news.google.com/rss/search?q=(Erlebnis+OR+Workshop+OR+Kurs)+Gewinnspiel+when:7d&hl=de&gl=DE&ceid=DE:de",
+    "region": "DE"
+  },
+  {
+    "name": "Google News · Instagram-Gewinnspiele",
+    "url": "https://news.google.com/rss/search?q=Instagram+Gewinnspiel+when:7d&hl=de&gl=DE&ceid=DE:de",
+    "region": "DE"
+  },
+  {
+    "name": "mydealz · Gewinnspiele",
+    "url": "https://www.mydealz.de/rss/gruppe/gewinnspiele",
+    "region": "DE",
+    "trusted": true
+  },
+  {
+    "name": "Reddit · r/giveaways",
+    "url": "https://www.reddit.com/r/giveaways/new/.rss",
+    "defaultMethod": "reddit",
+    "trusted": true
+  }
+]

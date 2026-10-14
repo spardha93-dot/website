@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Giveaway Scout</title>
-  <meta name="description" content="Find, vet and track giveaways and sweepstakes in one place." />
+  <meta name="description" content="Live giveaways in Germany by category and entry method — plus a tracker and scam check." />
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -115,6 +115,49 @@
     .tips ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
     .tips li { margin-bottom: 4px; }
 
+    /* Live feed */
+    .feed-status { color: var(--ink-soft); font-size: .85rem; }
+    .feed-status button { border: 0; background: none; color: var(--accent); cursor: pointer; padding: 0; font-size: inherit; text-decoration: underline; }
+    .filters { display: grid; gap: 12px; }
+    .flabel { font-size: .78rem; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px;
+      padding: 5px 12px; font-size: .85rem; cursor: pointer; display: inline-flex; gap: 6px; align-items: center;
+    }
+    .chip .c { color: var(--ink-soft); font-size: .78rem; }
+    .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .chip[aria-pressed="true"] .c { color: rgba(255,255,255,.8); }
+    .chip:disabled { opacity: .4; cursor: default; }
+    .filters .row input[type="search"] { max-width: 260px; }
+    .filters .row select { width: auto; }
+    .group { margin-top: 26px; }
+    .group > h2 { font-size: 1.25rem; display: flex; align-items: baseline; gap: 8px; }
+    .group > h2 .c { font-family: var(--font-body); font-size: .85rem; color: var(--ink-soft); font-weight: 500; }
+    .gcard { display: flex; flex-direction: column; gap: 8px; }
+    .gcard h3 { font-family: var(--font-body); font-size: .98rem; font-weight: 600; margin: 0; line-height: 1.35; }
+    .gcard h3 a { color: var(--ink); text-decoration: none; }
+    .gcard h3 a:hover { color: var(--accent); }
+    .gcard .sum { color: var(--ink-soft); font-size: .85rem; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .gcard .foot { display: flex; gap: 8px; align-items: center; margin-top: auto; padding-top: 4px; }
+    .tagrow { display: flex; flex-wrap: wrap; gap: 5px; }
+    .m { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: .74rem; font-weight: 600; background: var(--line); color: var(--ink); }
+    .m.instagram { background: #f7dbe8; color: #a1225f; }
+    .m.youtube { background: #fbdcdc; color: #b0201c; }
+    .m.x { background: #e3e3e3; color: #111; }
+    .m.facebook { background: #dde6fa; color: #1d4fb8; }
+    .m.tiktok { background: #d9f4f3; color: #0f6f6a; }
+    .m.reddit { background: #fde3d4; color: #b8410b; }
+    .m.website { background: var(--accent-soft); color: var(--accent); }
+    .m.email, .m.postcard, .m.phone { background: var(--warn-soft); color: var(--warn); }
+    .a { font-size: .74rem; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: 6px; padding: 1px 7px; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .m:not(.website):not(.email):not(.postcard):not(.phone) { filter: brightness(.85) saturate(1.2); }
+    }
+    .more { margin-top: 28px; }
+    .more summary { cursor: pointer; font-weight: 600; }
+    .more[open] summary { margin-bottom: 14px; }
+
     /* Stats */
     .stat { padding: 14px 16px; }
     .stat .n { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; }
@@ -189,50 +232,47 @@
   <main class="wrap">
     <!-- ================= SCOUT ================= -->
     <section id="tab-scout">
-      <h1>Find giveaways</h1>
-      <p class="intro">Type what you'd like to win and pick a category. Scout builds targeted searches across the places giveaways are posted, filtered to recent results where the site allows it.</p>
+      <div class="row" style="align-items:baseline">
+        <h1 style="margin:0">Giveaways in Germany</h1>
+        <span class="spacer"></span>
+        <span class="feed-status" id="feed-status">Loading…</span>
+      </div>
+      <p class="intro" style="margin-top:8px">Collected automatically from German giveaway feeds every few hours. Pick what you'd like to win and how you're happy to enter.</p>
 
-      <div class="card">
-        <div class="grid grid-3">
-          <div>
-            <label for="q">Prize keyword</label>
-            <input type="search" id="q" placeholder="e.g. iPhone, Lego, espresso machine" />
-          </div>
-          <div>
-            <label for="cat">Category</label>
-            <select id="cat">
-              <option value="">Anything</option>
-              <option value="tech">Tech &amp; gadgets</option>
-              <option value="games">Video games</option>
-              <option value="beauty">Beauty &amp; skincare</option>
-              <option value="travel">Travel &amp; trips</option>
-              <option value="home">Home &amp; interior</option>
-              <option value="cash">Cash &amp; gift cards</option>
-              <option value="books">Books</option>
-            </select>
-          </div>
-          <div>
-            <label for="region">Open to</label>
-            <select id="region">
-              <option value="">Any country</option>
-              <option value="worldwide">Worldwide</option>
-              <option value="Germany">Germany</option>
-              <option value="EU">EU</option>
-              <option value="UK">UK</option>
-              <option value="US">US</option>
-              <option value="India">India</option>
-            </select>
-          </div>
+      <div class="card filters">
+        <div><div class="flabel">Category</div><div class="chips" id="f-cats"></div></div>
+        <div><div class="flabel">Enter via</div><div class="chips" id="f-methods"></div></div>
+        <div><div class="flabel">What you do</div><div class="chips" id="f-actions"></div></div>
+        <div class="row">
+          <input type="search" id="feed-q" placeholder="Search prizes…" aria-label="Search prizes" />
+          <select id="feed-sort" aria-label="Sort">
+            <option value="new">Newest first</option>
+            <option value="ending">Ending soonest</option>
+            <option value="az">A–Z</option>
+          </select>
+          <label class="checkline" style="margin:0"><input type="checkbox" id="feed-hide-tracked" /> Hide ones I'm tracking</label>
+          <span class="spacer"></span>
+          <button class="btn plain small" id="feed-clear">Clear filters</button>
         </div>
       </div>
 
-      <div class="sources grid grid-3" id="sources"></div>
+      <div id="feed"></div>
+
+      <details class="card more">
+        <summary>Search more places yourself</summary>
+        <p style="color:var(--ink-soft);margin-top:0">Instagram, X, YouTube and Facebook don't publish feeds, so check them directly. Searches are set to Germany and recent posts.</p>
+        <div style="max-width:360px">
+          <label for="q">Prize keyword</label>
+          <input type="search" id="q" placeholder="e.g. Dyson, Konzert, Hotel" />
+        </div>
+        <div class="sources grid grid-3" id="sources"></div>
+      </details>
 
       <div class="card tips">
         <h3>Scouting tips</h3>
         <ul>
-          <li>Smaller giveaways (brand Instagram posts, niche blogs, local shops) have far fewer entrants than big national sweepstakes.</li>
-          <li>Log a giveaway in the Tracker the moment you find it — deadlines are easy to miss.</li>
+          <li>Smaller giveaways (brand Instagram posts, local radio, niche blogs) have far fewer entrants than big national ones.</li>
+          <li>Hit "+ Track" on anything you like — deadlines are easy to miss.</li>
           <li>Mark daily-entry giveaways as "daily" so they show up at the top every day.</li>
           <li>Use a separate email address for entries to keep your main inbox clean.</li>
           <li>Run anything unfamiliar through the Vet tab before sharing personal details.</li>
@@ -377,52 +417,208 @@
       ["scout", "tracker", "vet"].forEach(n => $("#tab-" + n).hidden = n !== name);
       try { localStorage.setItem(KEY + ":tab", name); } catch (e) {}
       if (name === "tracker") render();
+      if (name === "scout" && feed.generatedAt) renderFeed();
     }
     document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => showTab(b.dataset.tab)));
 
-    /* ---------- scout ---------- */
-    const CAT_TERMS = {
-      tech: "tech gadget", games: "game key steam", beauty: "beauty skincare",
-      travel: "trip travel", home: "home decor", cash: "cash gift card", books: "book"
+    /* ---------- scout: live feed ---------- */
+    const CAT_LABELS = {
+      household: "Household", tech: "Tech & games", music: "Music", events: "Events & tickets",
+      experiences: "Experiences", stays: "Stays & hotels", travel: "Travel", beauty_fashion: "Beauty & fashion",
+      food_drink: "Food & drink", family: "Kids & family", cash_vouchers: "Cash & vouchers", sport: "Sport & outdoor",
+      books: "Books & media", other: "Other"
     };
-    const CAT_SUBS = {
-      games: ["FreeGameFindings", "giveaways"], tech: ["giveaways", "sweepstakes"],
-      beauty: ["giveaways"], books: ["giveaways", "bookclub"]
+    const METHOD_LABELS = {
+      instagram: "Instagram", youtube: "YouTube", x: "X", facebook: "Facebook", tiktok: "TikTok", reddit: "Reddit",
+      website: "Website", email: "Email", postcard: "Postcard", phone: "Phone / SMS"
     };
+    const ACTION_LABELS = {
+      comment: "Comment", like: "Like", follow: "Follow", tag: "Tag friends", share: "Share",
+      answer: "Answer a question", form: "Fill a form"
+    };
+    const FKEY = KEY + ":feed-filters";
 
-    function sources() {
-      const kw = $("#q").value.trim();
-      const cat = $("#cat").value;
-      const region = $("#region").value;
-      const terms = [kw, CAT_TERMS[cat]].filter(Boolean).join(" ");
-      const enc = encodeURIComponent;
-      const regionTerm = region ? ` "${region}"` : "";
-      const base = terms || "giveaway";
-      const subs = (CAT_SUBS[cat] || ["giveaways", "sweepstakes"]).join("+");
-      const tag = (kw || CAT_TERMS[cat] || "").split(/\s+/)[0].toLowerCase().replace(/[^a-z0-9]/g, "");
+    let feed = { items: [], sources: [], generatedAt: null };
+    let ff = { cat: "", methods: [], actions: [], q: "", sort: "new", hideTracked: false };
+    try { Object.assign(ff, JSON.parse(localStorage.getItem(FKEY)) || {}); } catch (e) {}
+    function saveFilters() { try { localStorage.setItem(FKEY, JSON.stringify(ff)); } catch (e) {} }
 
-      return [
-        { name: "Google — past week", note: "Fresh giveaway pages from anywhere on the web",
-          url: `https://www.google.com/search?q=${enc(`${terms} giveaway${regionTerm}`)}&tbs=qdr:w` },
-        { name: "Gleam.io", note: "Brand giveaways with point-based entries",
-          url: `https://www.google.com/search?q=${enc(`site:gleam.io ${base}${regionTerm}`)}&tbs=qdr:m` },
-        { name: "Reddit", note: `r/${subs.replace(/\+/g, ", r/")} — newest posts`,
-          url: `https://www.reddit.com/r/${subs}/search/?q=${enc(terms || "giveaway")}&restrict_sr=1&sort=new` },
-        { name: "X / Twitter", note: "Latest giveaway tweets",
-          url: `https://x.com/search?q=${enc(`${terms} (giveaway OR #giveaway)${region && region !== "worldwide" ? " " + region : ""}`)}&f=live` },
-        { name: "Instagram", note: tag ? `#${tag}giveaway hashtag` : "#giveaway hashtag",
-          url: `https://www.instagram.com/explore/tags/${enc(tag ? tag + "giveaway" : "giveaway")}/` },
-        { name: "YouTube", note: "Creator giveaways uploaded this week",
-          url: `https://www.youtube.com/results?search_query=${enc(`${terms} giveaway`)}&sp=EgIIAw%253D%253D` },
-        { name: "Sweepstakes directories", note: "Online Sweepstakes & Sweeties Sweeps listings",
-          url: `https://www.google.com/search?q=${enc(`(site:online-sweepstakes.com OR site:sweetiessweeps.com) ${base}`)}` },
-        { name: "Blogs & magazines", note: "Reviewer and blog giveaways — fewer entrants",
-          url: `https://www.google.com/search?q=${enc(`${terms} "giveaway" "ends" -site:instagram.com -site:x.com${regionTerm}`)}&tbs=qdr:m` },
-        { name: "Facebook", note: "Page and group giveaways",
-          url: `https://www.facebook.com/search/posts/?q=${enc(`${terms} giveaway`)}` }
-      ];
+    function ago(iso) {
+      const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+      if (m < 60) return `${Math.max(1, m)} min ago`;
+      const h = Math.round(m / 60);
+      if (h < 24) return `${h} h ago`;
+      const d = Math.round(h / 24);
+      return `${d} day${d === 1 ? "" : "s"} ago`;
+    }
+    const isTracked = it => items.some(t => t.feedId === it.id);
+    const live = () => feed.items.filter(it => !it.deadline || daysLeft(it.deadline) >= 0);
+
+    // Items matching every filter except `skip`, so chip counts show what you'd get by clicking.
+    function matching(skip) {
+      const q = ff.q.trim().toLowerCase();
+      return live().filter(it => {
+        if (skip !== "cat" && ff.cat && !it.categories.includes(ff.cat)) return false;
+        if (skip !== "methods" && ff.methods.length && !ff.methods.some(m => it.methods.includes(m))) return false;
+        if (skip !== "actions" && ff.actions.length && !ff.actions.some(a => it.actions.includes(a))) return false;
+        if (ff.hideTracked && isTracked(it)) return false;
+        if (q && !`${it.title} ${it.summary} ${it.publisher}`.toLowerCase().includes(q)) return false;
+        return true;
+      });
+    }
+    function count(list, field, key) { return list.filter(it => it[field].includes(key)).length; }
+
+    function renderChips() {
+      const forCats = matching("cat"), forMethods = matching("methods"), forActions = matching("actions");
+      $("#f-cats").innerHTML =
+        `<button class="chip" data-cat="" aria-pressed="${!ff.cat}">All <span class="c">${forCats.length}</span></button>` +
+        Object.entries(CAT_LABELS).map(([k, l]) => {
+          const n = count(forCats, "categories", k);
+          return `<button class="chip" data-cat="${k}" aria-pressed="${ff.cat === k}" ${n || ff.cat === k ? "" : "disabled"}>${l} <span class="c">${n}</span></button>`;
+        }).join("");
+      $("#f-methods").innerHTML = Object.entries(METHOD_LABELS).map(([k, l]) => {
+        const n = count(forMethods, "methods", k), on = ff.methods.includes(k);
+        return `<button class="chip" data-method="${k}" aria-pressed="${on}" ${n || on ? "" : "disabled"}>${l} <span class="c">${n}</span></button>`;
+      }).join("");
+      $("#f-actions").innerHTML = Object.entries(ACTION_LABELS).map(([k, l]) => {
+        const n = count(forActions, "actions", k), on = ff.actions.includes(k);
+        return `<button class="chip" data-action="${k}" aria-pressed="${on}" ${n || on ? "" : "disabled"}>${l} <span class="c">${n}</span></button>`;
+      }).join("");
     }
 
+    function sortFeed(list) {
+      const by = {
+        new: (a, b) => Date.parse(b.published) - Date.parse(a.published),
+        ending: (a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999") || Date.parse(b.published) - Date.parse(a.published),
+        az: (a, b) => a.title.localeCompare(b.title, "de")
+      };
+      return list.slice().sort(by[ff.sort] || by.new);
+    }
+
+    function feedCard(it) {
+      const dl = daysLeft(it.deadline);
+      let when = `Found ${ago(it.firstSeen || it.published)}`;
+      if (it.deadline) {
+        when = dl === 0 ? `<span class="due-soon">Ends today</span>`
+          : dl <= 3 ? `<span class="due-soon">Ends in ${dl} day${dl > 1 ? "s" : ""}</span>`
+          : `Ends ${new Date(it.deadline + "T12:00:00").toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`;
+      }
+      const tracked = isTracked(it);
+      return `
+        <article class="card gcard" data-fid="${esc(it.id)}">
+          <div class="tagrow">
+            ${it.methods.map(m => `<span class="m ${esc(m)}">${esc(METHOD_LABELS[m] || m)}</span>`).join("")}
+            ${it.actions.map(a => `<span class="a">${esc(ACTION_LABELS[a] || a)}</span>`).join("")}
+            ${it.eligibility === "worldwide" ? `<span class="a">Worldwide</span>` : ""}
+          </div>
+          <h3><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${esc(it.title)}</a></h3>
+          ${it.summary && it.summary.toLowerCase() !== it.title.toLowerCase() ? `<p class="sum">${esc(it.summary)}</p>` : ""}
+          <div class="meta"><span>${when}</span><span>${esc(it.publisher || it.source)}</span></div>
+          <div class="foot">
+            <a class="btn small ghost" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">Open</a>
+            <button class="btn small ${tracked ? "plain" : ""}" data-track ${tracked ? "disabled" : ""}>${tracked ? "Tracking ✓" : "+ Track"}</button>
+          </div>
+        </article>`;
+    }
+
+    function renderFeed() {
+      renderChips();
+      $("#feed-q").value = ff.q;
+      $("#feed-sort").value = ff.sort;
+      $("#feed-hide-tracked").checked = ff.hideTracked;
+
+      if (!feed.generatedAt) {
+        $("#feed").innerHTML = `<div class="empty" style="margin-top:20px">The live feed hasn't been built yet. It refreshes automatically every 4 hours — meanwhile, use “Search more places yourself” below.</div>`;
+        return;
+      }
+      const list = sortFeed(matching());
+      if (!list.length) {
+        $("#feed").innerHTML = `<div class="empty" style="margin-top:20px">No giveaways match these filters right now.</div>`;
+        return;
+      }
+      // "All" groups each giveaway under its main category; a chosen category shows a flat list.
+      const groups = ff.cat ? [[ff.cat, list]] : Object.keys(CAT_LABELS)
+        .map(k => [k, list.filter(it => (it.categories[0] || "other") === k)])
+        .filter(([, l]) => l.length);
+      $("#feed").innerHTML = groups.map(([k, l]) => `
+        <section class="group">
+          <h2>${esc(CAT_LABELS[k] || k)} <span class="c">${l.length}</span></h2>
+          <div class="grid grid-3">${l.map(feedCard).join("")}</div>
+        </section>`).join("");
+    }
+
+    function renderFeedStatus() {
+      const el = $("#feed-status");
+      if (!feed.generatedAt) { el.textContent = ""; return; }
+      const bad = feed.sources.filter(s => !s.ok);
+      el.innerHTML = `${live().length} giveaways · updated ${ago(feed.generatedAt)}` +
+        (bad.length ? ` · <button type="button" id="src-info">${bad.length} source${bad.length > 1 ? "s" : ""} unavailable</button>` : "");
+      const btn = $("#src-info");
+      if (btn) btn.addEventListener("click", () => alert(bad.map(s => `${s.name}: ${s.error}`).join("\n")));
+    }
+
+    async function loadFeed() {
+      try {
+        const res = await fetch("data/giveaways.json", { cache: "no-cache" });
+        if (!res.ok) throw new Error(res.status);
+        feed = await res.json();
+        feed.items = feed.items || [];
+        feed.sources = feed.sources || [];
+      } catch (e) {
+        $("#feed-status").textContent = "";
+        $("#feed").innerHTML = `<div class="empty" style="margin-top:20px">Couldn't load the live feed. Open this page from the website (not as a local file) to see it.</div>`;
+        renderChips();
+        return;
+      }
+      renderFeedStatus();
+      renderFeed();
+    }
+
+    function setFilter(patch) { Object.assign(ff, patch); saveFilters(); renderFeed(); }
+    const toggle = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : arr.concat(v);
+    $("#f-cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b) setFilter({ cat: b.dataset.cat }); });
+    $("#f-methods").addEventListener("click", e => { const b = e.target.closest("[data-method]"); if (b) setFilter({ methods: toggle(ff.methods, b.dataset.method) }); });
+    $("#f-actions").addEventListener("click", e => { const b = e.target.closest("[data-action]"); if (b) setFilter({ actions: toggle(ff.actions, b.dataset.action) }); });
+    $("#feed-q").addEventListener("input", e => setFilter({ q: e.target.value }));
+    $("#feed-sort").addEventListener("input", e => setFilter({ sort: e.target.value }));
+    $("#feed-hide-tracked").addEventListener("change", e => setFilter({ hideTracked: e.target.checked }));
+    $("#feed-clear").addEventListener("click", () => setFilter({ cat: "", methods: [], actions: [], q: "" }));
+
+    $("#feed").addEventListener("click", e => {
+      const btn = e.target.closest("[data-track]");
+      if (!btn) return;
+      const it = feed.items.find(i => i.id === btn.closest("[data-fid]").dataset.fid);
+      if (!it || isTracked(it)) return;
+      const how = [it.methods.map(m => METHOD_LABELS[m] || m).join(", "), it.actions.map(a => ACTION_LABELS[a] || a).join(", ")]
+        .filter(Boolean).join(" — ");
+      items.push({
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), added: Date.now(), feedId: it.id,
+        title: it.title, url: it.url, source: it.publisher || it.source, deadline: it.deadline || "", value: "",
+        status: "found", steps: how ? `Enter via: ${how}` : "", daily: false, risk: "", lastEntered: ""
+      });
+      save(); renderFeed(); toast("Added to your tracker");
+    });
+
+    /* ---------- scout: manual searches ---------- */
+    function sources() {
+      const kw = $("#q").value.trim();
+      const enc = encodeURIComponent;
+      const tag = kw.split(/\s+/)[0].toLowerCase().replace(/[^a-z0-9äöüß]/g, "");
+      return [
+        { name: "Instagram", note: tag ? `#${tag}gewinnspiel` : "#gewinnspiel hashtag",
+          url: `https://www.instagram.com/explore/tags/${enc(tag ? tag + "gewinnspiel" : "gewinnspiel")}/` },
+        { name: "X / Twitter", note: "Latest German giveaway posts",
+          url: `https://x.com/search?q=${enc(`${kw} (gewinnspiel OR verlosung OR #gewinnspiel) lang:de`)}&f=live` },
+        { name: "YouTube", note: "Gewinnspiel videos from this week",
+          url: `https://www.youtube.com/results?search_query=${enc(`${kw} gewinnspiel`)}&sp=EgIIAw%253D%253D` },
+        { name: "TikTok", note: "#gewinnspiel posts",
+          url: `https://www.tiktok.com/search?q=${enc(`${kw} gewinnspiel`)}` },
+        { name: "Facebook", note: "Page and group giveaways",
+          url: `https://www.facebook.com/search/posts/?q=${enc(`${kw} gewinnspiel`)}` },
+        { name: "Google — past week", note: "Giveaway pages from German sites",
+          url: `https://www.google.de/search?q=${enc(`${kw} gewinnspiel teilnahmeschluss`)}&tbs=qdr:w&hl=de` }
+      ];
+    }
     function renderSources() {
       $("#sources").innerHTML = sources().map(s => `
         <a class="source" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">
@@ -431,7 +627,7 @@
           <span class="go">Search →</span>
         </a>`).join("");
     }
-    ["q", "cat", "region"].forEach(id => $("#" + id).addEventListener("input", renderSources));
+    $("#q").addEventListener("input", renderSources);
     renderSources();
 
     /* ---------- tracker ---------- */
@@ -673,8 +869,9 @@
 
     /* ---------- init ---------- */
     let startTab = "scout";
-    try { startTab = localStorage.getItem(KEY + ":tab") || (items.length ? "tracker" : "scout"); } catch (e) {}
+    try { startTab = localStorage.getItem(KEY + ":tab") || "scout"; } catch (e) {}
     showTab(["scout", "tracker", "vet"].includes(startTab) ? startTab : "scout");
+    loadFeed();
   })();
   </script>
 </body>
