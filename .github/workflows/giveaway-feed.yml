@@ -6,8 +6,6 @@ on:
   schedule:
     - cron: "17 */4 * * *"   # every 4 hours
   workflow_dispatch:
-  push:   # TEMPORARY: test run on the feature branch; remove before merging
-    branches: [claude/dazzling-bardeen-yfv45s]
 
 permissions:
   contents: write

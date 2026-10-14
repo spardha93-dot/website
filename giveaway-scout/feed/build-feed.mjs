@@ -18,7 +18,7 @@ const FETCH_TIMEOUT_MS = 20000;
 const PAGE_TIMEOUT_MS = 12000;
 const ENRICH_MAX_PER_RUN = 150;  // pages opened per run; the rest wait for the next run
 const ENRICH_CONCURRENCY = 4;
-const ENRICH_ATTEMPTS = 2;       // give up on a page after this many failed runs
+const ENRICH_ATTEMPTS = 3;       // give up on a page after this many failed runs
 const PAGE_MAX_BYTES = 2_000_000;
 
 /* ------------------------------------------------------------------ */
@@ -305,9 +305,25 @@ async function fetchPage(url) {
 // Google News RSS links point at news.google.com, not the article. Older ids embed the URL;
 // newer ones ("AU_yqL…") have to be exchanged through Google's own decoding endpoint.
 // Google refuses bursts, so its requests go one at a time with a pause in between.
+// Once Google answers 429 it stays blocked for a while: stop asking and leave the rest for the next run.
 let googleGate = Promise.resolve();
+let googleBlocked = false;
+const GOOGLE_MAX_PER_RUN = 80;
+let googleCalls = 0;
 function viaGoogle(fn) {
-  const run = googleGate.then(fn);
+  const run = googleGate.then(async () => {
+    if (googleBlocked || googleCalls >= GOOGLE_MAX_PER_RUN) throw Object.assign(new Error("Google rate limit, retry next run"), { later: true });
+    googleCalls++;
+    try {
+      return await fn();
+    } catch (err) {
+      if (/HTTP 429/.test(err.message)) {
+        googleBlocked = true;
+        err.later = true;
+      }
+      throw err;
+    }
+  });
   googleGate = run.catch(() => {}).then(() => new Promise(r => setTimeout(r, 1200)));
   return run;
 }
@@ -514,8 +530,10 @@ async function main() {
 
   // Visit pages of giveaways we haven't read yet.
   if (!fixtures) {
-    const queue = unique.filter(it => !it.enriched && it.attempts < ENRICH_ATTEMPTS).slice(0, ENRICH_MAX_PER_RUN);
-    const tally = { read: 0, dropped: 0, failed: 0 };
+    const queue = unique.filter(it => !it.enriched && it.attempts < ENRICH_ATTEMPTS)
+      .sort((a, b) => /news\.google/.test(a.url) - /news\.google/.test(b.url))
+      .slice(0, ENRICH_MAX_PER_RUN);
+    const tally = { read: 0, dropped: 0, failed: 0, later: 0 };
     await pool(queue, ENRICH_CONCURRENCY, async it => {
       try {
         const e = await enrich(it);
@@ -523,12 +541,13 @@ async function main() {
         Object.assign(it, applyEnrichment(it, e));
         tally.read++;
       } catch (err) {
+        if (err.later) { tally.later++; return; } // not this page's fault; try again next run
         it.attempts++;
         tally.failed++;
         console.log(`  ! ${String(err.message || err).slice(0, 60)}: ${it.url.slice(0, 80)}`);
       }
     });
-    console.log(`Pages: ${tally.read} read, ${tally.dropped} dropped, ${tally.failed} failed (${queue.length} queued)`);
+    console.log(`Pages: ${tally.read} read, ${tally.dropped} dropped, ${tally.failed} failed, ${tally.later} left for next run (${queue.length} queued)`);
     status.push({ name: "Giveaway pages", ok: true, fetched: queue.length, kept: tally.read });
   }
 
