@@ -34,17 +34,17 @@ const mapWords = obj => Object.fromEntries(Object.entries(obj).map(([k, v]) => [
 // An item gets its best one or two categories, scored by matches (title counts double).
 export const CATEGORIES = mapWords({
   household: "*haushalt*|*maschine|küche*|kaffeevollautomat*|kaffeemaschine*|espressomaschine*|staubsauger*|saugroboter*|thermomix|mixer|waschmaschine*|geschirr*|möbel*|deko*|garten*|gartenmöbel|grill|grills|gasgrill|bettwäsche|matratze*|airfryer|heißluftfritteuse*|kühlschrank*|pfanne*|kochtopf*|töpfe*|household|kitchen*|vacuum|dyson|kitchenaid|wohnzimmer|sofa|lampe*|haushaltsgerät*|küchenmaschine*",
-  tech: "steam|game|games|videospiel*|game-?keys?|*kopfhörer|*lautsprecher|smartphone*|handy|handys|iphone*|samsung|galaxy|laptop*|notebook*|tablet*|ipad*|kopfhörer*|headphones?|earbuds|airpods|kamera*|camera*|konsole*|playstation*|ps5|xbox|nintendo|smartwatch*|fernseher*|smart-?tv|oled|lautsprecher*|bluetooth-lautsprecher*|speaker*|gaming*|e-reader|kindle|drohne*|drone*|technik*|gadget*",
-  music: "musik*|music|album|alben|vinyl*|schallplatte*|plattenspieler*|signiert*|instrument*|gitarre*|guitar*|klavier*|band|bands|sänger*|sängerin|rapper*|konzert*|concert*|festival*|tour|tournee|musiker*",
-  events: "*ticket*|*konzert*|karten|freikarten|eintrittskarten|gästeliste*|konzert*|concert*|festival*|premiere*|vip|stadion*|bundesliga*|musical*|theater*|kino*|kinokarten|messe|show|shows|meet ?(?:&|and|und) ?greet|lesung*|comedy|veranstaltung*|event|events|spiel der|heimspiel*|open-air|openair",
+  tech: "street fighter|nintendo switch|*spiel für|konsolenspiel*|pc-spiel*|steam|game|games|videospiel*|game-?keys?|*kopfhörer|*lautsprecher|smartphone*|handy|handys|iphone*|samsung|galaxy|laptop*|notebook*|tablet*|ipad*|kopfhörer*|headphones?|earbuds|airpods|kamera*|camera*|konsole*|playstation*|ps5|xbox|nintendo|smartwatch*|fernseher*|smart-?tv|oled|lautsprecher*|bluetooth-lautsprecher*|speaker*|gaming*|e-reader|kindle|drohne*|drone*|technik*|gadget*",
+  music: "schlager*|*konzert*|chor|orchester*|musikverein*|oper|jazz*|rock|pop|music|album|alben|vinyl*|schallplatte*|plattenspieler*|signiert*|instrument*|gitarre*|guitar*|klavier*|band|bands|sänger*|sängerin|rapper*|konzert*|concert*|festival*|tour|tournee|musiker*",
+  events: "kinotickets|*karten|kino|ball|maturaball|jubiläumskonzert|show|comedy*|kabarett*|*tickets|*ticket*|*konzert*|karten|freikarten|eintrittskarten|gästeliste*|konzert*|concert*|festival*|premiere*|vip|stadion*|bundesliga*|musical*|theater*|kino*|kinokarten|messe|show|shows|meet ?(?:&|and|und) ?greet|lesung*|comedy|veranstaltung*|event|events|spiel der|heimspiel*|open-air|openair",
   experiences: "*erlebnis*|*kurs|*workshop*|experience*|kochkurs*|kurs|kurse|workshop*|rundflug*|fallschirm*|wellness*|spa|tasting*|verkostung*|führung*|freizeitpark*|europa-park|phantasialand|therme*|escape-?room*|ballonfahrt*|safari*|abenteuer*|fahrtraining*|segeltörn*|tagesausflug*|ausflug*|zoo",
   stays: "*übernachtung*|*hotel|*hotels|hotel*|kurzurlaub*|wochenendtrip*|wochenende im|ferienwohnung*|ferienhaus*|nächte|auszeit*|resort*|hotelaufenthalt*|aufenthalt|stay|staycation|airbnb|camping*|glamping*|chalet*|wellnesshotel*|wellnesswochenende*",
   travel: "reise*|urlaub*|flug|flüge|kreuzfahrt*|cruise*|trip|trips|rundreise*|travel*|flights?|städtereise*|traumreise*|bahnfahrt*",
   beauty_fashion: "beauty*|kosmetik*|pflegeset*|hautpflege|haarpflege|parfum*|parfüm*|duft|make-?up|skincare|mode|modegutschein*|fashion|sneaker*|schuhe|kleidung|outfit*|handtasche*|schmuck*|armbanduhr*|uhr|uhren|sonnenbrille*",
-  food_drink: "wein|weine|weinpaket*|bier|biere|gin|whisky|kaffee|kaffeebohnen|schokolade*|restaurant*|dinner*|abendessen|essen gehen|foodbox*|kochbox*|genuss*|lebensmittel*|feinkost*|food|drinks?|grillpaket*|brunch*|menü*|candle-?light*",
+  food_drink: "*gewürz*|gewürze|milka|*schokolade*|süßigkeit*|snack*|*tafeln|spirits|cocktail*|wein|weine|weinpaket*|bier|biere|gin|whisky|kaffee|kaffeebohnen|schokolade*|restaurant*|dinner*|abendessen|essen gehen|foodbox*|kochbox*|genuss*|lebensmittel*|feinkost*|food|drinks?|grillpaket*|brunch*|menü*|candle-?light*",
   family: "kinder*|baby*|spielzeug*|lego|playmobil|familie*|familien*|kids|toy|toys|kinderwagen*",
   cash_vouchers: "bargeld|*gutschein*|voucher*|gift ?cards?|geschenkkarte*|einkaufsgutschein*|cash|\\d[\\d.]*\\s?(?:€|euro)|paypal|geld",
-  sport: "fahrrad*|e-bike*|ebike*|fitness*|sport*|outdoor*|trikot*|wandern|wanderung*|ski|skipass*|yoga|laufschuhe|fußball*",
+  sport: "*lampe|stirnlampe*|handball*|eishockey*|basketball*|grizzlys|*trikot*|fahrrad*|e-bike*|ebike*|fitness*|sport*|outdoor*|trikot*|wandern|wanderung*|ski|skipass*|yoga|laufschuhe|fußball*",
   books: "buch|bücher*|hörbuch*|hörbücher|roman|romane|books?|dvd*|blu-?ray*|comic*|lesepaket*",
 });
 
@@ -73,12 +73,19 @@ export const ACTIONS = mapWords({
   form: "formular*|registrier*|anmelden|sign ?up",
 });
 
-const GIVEAWAY_WORDS = words("gewinnspiel*|verlos*|zu gewinnen|gewinnen sie|gewinnen|gewinne|gewinnt|giveaway*|give-away*|win|verlosung*|freikarten|preisausschreiben*|sweepstake*");
+// Strong words are enough on their own; a bare "gewinnen" also needs a prize hint, since news uses it for
+// sports and stocks ("Die Adler wollen gewinnen").
+const GIVEAWAY_WORDS = words("gewinnspiel*|*gewinnspiel*|verlos*|*verlosung*|zu gewinnen|gewinnen sie|freikarten|preisausschreiben*|giveaway*|give-away*|sweepstake*");
+const WEAK_GIVEAWAY_WORDS = words("gewinnen|gewinne|gewinnt|win");
+const PRIZE_HINT = words("\\d+ ?x ?\\d*|tickets?|karten|mitmachen|teilnehmen|gutschein*|preis|preise|abos?");
 // News items that mention giveaways without being one. Substring match, so it also catches compounds
 // like "Gewinnspielbetrug".
-const NOT_GIVEAWAY = /betrug|betrüger|abzocke|warnt|warnung|fake|scam|phishing|polizei|verbraucherzentrale|eurojackpot|lotto|lotterie|glücksspiel|abmahnung|gewinner stehen fest|gewinner wurden|winners? announced/iu;
-const NOT_GIVEAWAY_WORDS = words("gericht|gerichts*|urteil*");
-const NOT_GERMANY = words("us only|usa only|u\\.s\\. only|us residents|uk only|uk residents|canada only|australia only|nur (?:in |für )?(?:österreich|der schweiz)|open to (?:us|uk|canadian|australian)");
+const NOT_GIVEAWAY = /aktie|börse|dax-|umsatz|quartal|betrug|betrüger|abzocke|warnt|warnung|fake|scam|phishing|polizei|verbraucherzentrale|eurojackpot|lotto|lotterie|glücksspiel|abmahnung|gewinner stehen fest|gewinner wurden|winners? announced/iu;
+const NOT_GIVEAWAY_WORDS = words("gericht|gerichts*|urteil*|gewann|gewannen|gewinner|gewinnerin*|mit gewinnen|kurs");
+const REGION_TAG = /[{[(](?:us|usa|uk|ca|can|au|aus|nz|in|ph|us\s*\/\s*ca|us\s*&\s*ca)(?:\s*only)?[}\])]/i;
+const NOT_GERMANY = words("\\d+ ?\\$|\\$ ?\\d+|usd|us only|usa only|u\\.s\\. only|us residents|uk only|uk residents|canada only|australia only|nur (?:in |für )?(?:österreich|der schweiz)|open to (?:us|uk|canadian|australian)");
+// Local events in Austria/Switzerland (a Vienna concert is no use from Germany). A hotel stay there is fine.
+const AT_CH_PLACES = words("österreich*|wien|wiener|graz|linz|salzburg|innsbruck|klagenfurt|kärnten|tirol|vorarlberg|steiermark|oberösterreich|niederösterreich|burgenland|schweiz|zürich|basel|bern|luzern");
 const GERMANY = words("deutschland*|germany|wohnsitz in (?:deutschland|de)|bundesweit|de|eu-weit|eu only|europe|europa*");
 const WORLDWIDE = words("worldwide|weltweit|international|ww");
 
@@ -98,6 +105,7 @@ export function stripHtml(s = "") {
   return decode(decode(s)) // descriptions are often HTML-escaped HTML
     .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
     .replace(/<[^>]+>/g, " ")
+    .replace(/\u00ad/g, "") // soft hyphens split words like "ge\u00adwin\u00adnen"
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -120,9 +128,10 @@ export function parseFeed(xml) {
     const summary = stripHtml(tag(b, "description") || tag(b, "content:encoded") || tag(b, "summary") || tag(b, "content"));
     const date = stripHtml(tag(b, "pubDate") || tag(b, "published") || tag(b, "updated") || tag(b, "dc:date"));
     const publisher = stripHtml(tag(b, "source"));
+    const publisherUrl = attr(b, "source", "url");
     const cats = [...b.matchAll(/<category\b[^>]*?(?:term=["']([^"']+)["'][^>]*\/?>|>([\s\S]*?)<\/category>)/gi)]
       .map(m => stripHtml(m[1] || m[2] || ""));
-    if (title && link) out.push({ title, link, summary, date, publisher, cats });
+    if (title && link) out.push({ title, link, summary, date, publisher, publisherUrl, cats });
   }
   return out;
 }
@@ -162,6 +171,12 @@ export function findDeadline(text, ref = new Date()) {
     new RegExp(`${LEAD}[:\\s]*(${MONTH_RE})\\.?\\s(\\d{1,2})(?:st|nd|rd|th)?,?(?:\\s(\\d{4}))?`, "i"),
   ];
   let m;
+  // Reddit-style "(9/30/2025)" or "{13/8/25}": month/day unless the first number can't be a month.
+  if ((m = text.match(/[({[]\s*(\d{1,2})\/(\d{1,2})\/(\d{2,4})\s*[)}\]]/))) {
+    let a = +m[1], b = +m[2];
+    const [mo, d] = a > 12 ? [b, a] : [a, b];
+    return iso(fixYear(+m[3], mo, d, ref), mo, d);
+  }
   if ((m = text.match(patterns[0]))) {
     const d = +m[1], mo = +m[2];
     return iso(fixYear(m[3] ? +m[3] : 0, mo, d, ref), mo, d);
@@ -186,6 +201,7 @@ function hash(s) {
   for (const c of s) h = Math.imul(h ^ c.codePointAt(0), 16777619);
   return (h >>> 0).toString(36);
 }
+const hostOf = u => { try { return new URL(u).hostname; } catch { return ""; } };
 const normTitle = t => t.toLowerCase().replace(/[^a-z0-9äöüß]+/g, " ").trim();
 
 export function classify(raw, source, now = new Date()) {
@@ -199,9 +215,11 @@ export function classify(raw, source, now = new Date()) {
   const summary = raw.summary.replace(publisher || "\u0000", "").trim().slice(0, 400);
   const text = `${title} ${summary} ${raw.cats.join(" ")}`;
 
-  if (!source.trusted && !GIVEAWAY_WORDS.test(text)) return null;
+  if (!source.trusted && !GIVEAWAY_WORDS.test(text) && !(WEAK_GIVEAWAY_WORDS.test(text) && PRIZE_HINT.test(text))) return null;
   if (NOT_GIVEAWAY.test(title) || NOT_GIVEAWAY_WORDS.test(title)) return null;
-  if (NOT_GERMANY.test(text)) return null;
+  if (NOT_GERMANY.test(text) || REGION_TAG.test(title)) return null;
+  // Publishers on .at/.ch domains run giveaways for their own readers.
+  if (/\.(at|ch)$/i.test(hostOf(raw.publisherUrl))) return null;
 
   const scored = Object.entries(CATEGORIES)
     .map(([k, re]) => [k, (title.match(new RegExp(re.source, re.flags + "g")) || []).length * 2 + (summary.match(new RegExp(re.source, re.flags + "g")) || []).length])
@@ -209,6 +227,8 @@ export function classify(raw, source, now = new Date()) {
     .sort((a, b) => b[1] - a[1]);
   const categories = scored.slice(0, 2).map(([k]) => k);
   if (!categories.length) categories.push("other");
+
+  if (categories.some(c => c === "events" || c === "experiences") && AT_CH_PLACES.test(text)) return null;
 
   const methods = Object.keys(METHODS).filter(k => METHODS[k].test(text));
   if (!methods.length) methods.push(source.defaultMethod || "website");
