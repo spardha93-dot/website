@@ -3,7 +3,8 @@
 // Run by .github/workflows/giveaway-feed.yml on a schedule. No dependencies (Node 20+).
 //
 //   node giveaway-scout/feed/build-feed.mjs                 fetch live feeds
-//   node giveaway-scout/feed/build-feed.mjs --fixtures DIR  read <DIR>/<n>.xml instead (for testing)
+//   node giveaway-scout/feed/build-feed.mjs --fixtures DIR  read <DIR>/<n>.xml instead, skip page visits (testing)
+//   node giveaway-scout/feed/build-feed.mjs --page URL      show what page enrichment finds for one URL
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -14,6 +15,11 @@ const OUT = join(HERE, "..", "data", "giveaways.json");
 const MAX_ITEMS = 400;
 const MAX_AGE_DAYS = 21;        // drop undated giveaways first seen longer ago than this
 const FETCH_TIMEOUT_MS = 20000;
+const PAGE_TIMEOUT_MS = 12000;
+const ENRICH_MAX_PER_RUN = 150;  // pages opened per run; the rest wait for the next run
+const ENRICH_CONCURRENCY = 4;
+const ENRICH_ATTEMPTS = 2;       // give up on a page after this many failed runs
+const PAGE_MAX_BYTES = 2_000_000;
 
 /* ------------------------------------------------------------------ */
 /* Classification rules                                                */
@@ -164,9 +170,9 @@ function fixYear(y, m, d, ref) {
 export function findDeadline(text, ref = new Date()) {
   const patterns = [
     // 31.10.2026 / 31.10.26 / 31.10.
-    new RegExp(`${LEAD}[:\\s]*(?:dem |den |zum )?(\\d{1,2})\\.\\s?(\\d{1,2})\\.(\\d{2,4})?`, "i"),
+    new RegExp(`${LEAD}[^\\d\\n]{0,25}?(\\d{1,2})\\.\\s?(\\d{1,2})\\.(\\d{2,4})?`, "i"),
     // 31. Oktober 2026 / 31 October
-    new RegExp(`${LEAD}[:\\s]*(?:dem |den |zum )?(\\d{1,2})\\.?\\s(${MONTH_RE})\\.?(?:\\s(\\d{4}))?`, "i"),
+    new RegExp(`${LEAD}[^\\d\\n]{0,25}?(\\d{1,2})\\.?\\s(${MONTH_RE})\\.?(?:\\s(\\d{4}))?`, "i"),
     // October 31, 2026
     new RegExp(`${LEAD}[:\\s]*(${MONTH_RE})\\.?\\s(\\d{1,2})(?:st|nd|rd|th)?,?(?:\\s(\\d{4}))?`, "i"),
   ];
@@ -230,8 +236,8 @@ export function classify(raw, source, now = new Date()) {
 
   if (categories.some(c => c === "events" || c === "experiences") && AT_CH_PLACES.test(text)) return null;
 
-  const methods = Object.keys(METHODS).filter(k => METHODS[k].test(text));
-  if (!methods.length) methods.push(source.defaultMethod || "website");
+  const methodsFromFeed = Object.keys(METHODS).filter(k => METHODS[k].test(text));
+  const methods = methodsFromFeed.length ? methodsFromFeed.slice() : [source.defaultMethod || "website"];
   const actions = Object.keys(ACTIONS).filter(k => ACTIONS[k].test(text));
 
   let eligibility = source.region || "unknown";
@@ -252,9 +258,155 @@ export function classify(raw, source, now = new Date()) {
     deadline,
     categories,
     methods,
+    methodsFromFeed,
     actions,
     eligibility,
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Page enrichment: open each giveaway's page and read how to enter    */
+/* ------------------------------------------------------------------ */
+
+const BROWSER_UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36";
+// Pages behind logins or bot walls; the feed text is all we get for these.
+const NO_FETCH_HOSTS = /(^|\.)(instagram\.com|facebook\.com|x\.com|twitter\.com|tiktok\.com|reddit\.com|youtube\.com|youtu\.be)$/i;
+const PARTICIPATION = words("gewinnspiel*|*gewinnspiel*|verlos*|*verlosung*|teilnahme*|teilnehmen|nehmen sie teil|nimm teil|mitmachen|einsendeschluss|teilnahmeschluss|zu gewinnen|giveaway*|kommentier*|markier*");
+const ENDED = /(gewinnspiel|verlosung|aktion|teilnahme(?:zeitraum)?)\s+ist\s+(?:bereits\s+|leider\s+)*(beendet|abgelaufen|vorbei|geschlossen|abgeschlossen)|gewinner(?:innen)?\s+(?:wurden|wurde|stehen|sind)\s+(?:bereits\s+)?(ermittelt|gezogen|fest|benachrichtigt|informiert)|keine teilnahme mehr möglich/i;
+const NOT_DE_RESIDENTS = /wohnsitz\s+in\s+(österreich|der schweiz)|nur\s+für\s+(personen|teilnehmer\w*)\s+(aus|mit wohnsitz in)\s+(österreich|der schweiz)/i;
+const BLOCK_TAGS = /<\/?(?:p|div|li|ul|ol|h[1-6]|br|tr|td|section|article|blockquote|figure|figcaption|dd|dt)\b[^>]*>/gi;
+
+async function fetchPage(url) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), PAGE_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      redirect: "follow",
+      headers: { "User-Agent": BROWSER_UA, Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.5", "Accept-Language": "de-DE,de;q=0.9,en;q=0.6" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const type = res.headers.get("content-type") || "";
+    if (type && !/html/i.test(type)) throw new Error(`not HTML (${type})`);
+    const buf = new Uint8Array(await res.arrayBuffer()).slice(0, PAGE_MAX_BYTES);
+    let charset = (type.match(/charset=["']?([\w-]+)/i) || [])[1];
+    if (!charset) charset = (new TextDecoder("latin1").decode(buf.slice(0, 4096)).match(/<meta[^>]+charset=["']?([\w-]+)/i) || [])[1];
+    let html;
+    try { html = new TextDecoder(charset || "utf-8").decode(buf); } catch { html = new TextDecoder().decode(buf); }
+    return { html, finalUrl: res.url || url };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// Google News RSS links point at news.google.com, not the article. Older ids embed the URL;
+// newer ones ("AU_yqL…") have to be exchanged through Google's own decoding endpoint.
+export async function resolveGoogleNews(url) {
+  const m = url.match(/news\.google\.com\/(?:rss\/)?articles\/([^?#]+)/);
+  if (!m) return url;
+  const id = m[1];
+  try {
+    const raw = Buffer.from(id.replace(/-/g, "+").replace(/_/g, "/"), "base64").toString("latin1");
+    const direct = raw.match(/https?:\/\/[\x21-\x7e]+/);
+    if (direct && !raw.includes("AU_yqL")) return direct[0];
+  } catch {}
+  const { html } = await fetchPage(`https://news.google.com/articles/${id}?hl=de&gl=DE&ceid=DE:de`);
+  const sig = (html.match(/data-n-a-sg="([^"]+)"/) || [])[1];
+  const ts = (html.match(/data-n-a-ts="([^"]+)"/) || [])[1];
+  if (!sig || !ts) throw new Error("Google News: no signature");
+  const payload = ["garturlreq", [["X", "X", ["X", "X"], null, null, 1, 1, "DE:de", null, 1, null, null, null, null, null, 0, 1], "X", "X", 1, [1, 1, 1], 1, 1, null, 0, 0, null, 0], id, Number(ts), sig];
+  const body = "f.req=" + encodeURIComponent(JSON.stringify([[["Fbv4je", JSON.stringify(payload), null, "generic"]]]));
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), PAGE_TIMEOUT_MS);
+  try {
+    const res = await fetch("https://news.google.com/_/DotsSplashUi/data/batchexecute", {
+      method: "POST", signal: ctrl.signal, body,
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", "User-Agent": BROWSER_UA },
+    });
+    if (!res.ok) throw new Error(`Google News: HTTP ${res.status}`);
+    const text = await res.text();
+    const outer = JSON.parse(text.split("\n\n")[1]);
+    const decoded = JSON.parse(outer[0][2])[1];
+    if (!/^https?:\/\//.test(decoded)) throw new Error("Google News: no URL");
+    return decoded;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// Pulls the participation instructions out of an article page. Share bars and "follow us" link lists
+// are short fragments, so only blocks of real sentences are kept, and only those near giveaway words.
+export function readGiveawayPage(html) {
+  let body = html
+    .replace(/<(script|style|noscript|svg|template|iframe)\b[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<(nav|footer|aside)\b[\s\S]*?<\/\1>/gi, " ");
+  const scoped = body.match(/<article\b[\s\S]*<\/article>/i) || body.match(/<main\b[\s\S]*<\/main>/i);
+  if (scoped) body = scoped[0];
+
+  const hasForm = /<form\b(?![^>]*(?:search|suche|newsletter|login))[^>]*>[\s\S]*?<(?:input|textarea)\b(?![^>]*type=["']?(?:hidden|search|submit|button)\b)[\s\S]*?<\/form>/i.test(body);
+  const mailto = /href=["']mailto:[^"']*(gewinn|verlos|teilnahme)/i.test(body);
+
+  const deadlineLine = new RegExp(LEAD, "i");
+  const blocks = body.split(BLOCK_TAGS).map(b => stripHtml(b))
+    .filter(b => b.split(/\s+/).length >= 6 || (deadlineLine.test(b) && /\d/.test(b)));
+  const text = blocks.join("\n");
+  const keep = new Set();
+  const re = new RegExp(PARTICIPATION.source, "giu");
+  for (const m of text.matchAll(re)) {
+    // Keep the block with the hit plus its neighbours.
+    const idx = text.slice(0, m.index).split("\n").length - 1;
+    for (let i = Math.max(0, idx - 1); i <= Math.min(blocks.length - 1, idx + 3); i++) keep.add(i);
+  }
+  const relevant = [...keep].sort((a, b) => a - b).map(i => blocks[i]).join("\n");
+  return { text: relevant, hasForm, mailto, ended: ENDED.test(relevant) };
+}
+
+// Returns fields to merge into the item, { drop: reason } to discard it, or throws on fetch failure.
+export async function enrich(item) {
+  let url = item.url;
+  if (/news\.google\.com/.test(url)) url = await resolveGoogleNews(url);
+  const host = hostOf(url);
+  if (/\.(at|ch)$/i.test(host)) return { drop: "Austrian/Swiss site" };
+  if (NO_FETCH_HOSTS.test(host)) return { url };
+
+  const { html, finalUrl } = await fetchPage(url);
+  const page = readGiveawayPage(html);
+  if (/\.(at|ch)$/i.test(hostOf(finalUrl))) return { drop: "Austrian/Swiss site" };
+  if (page.ended) return { drop: "giveaway has ended" };
+  if (NOT_GERMANY.test(page.text) || NOT_DE_RESIDENTS.test(page.text)) return { drop: "not open to Germany" };
+
+  const found = Object.keys(METHODS).filter(k => METHODS[k].test(page.text));
+  if (page.hasForm && !found.includes("website")) found.push("website");
+  if (page.mailto && !found.includes("email")) found.push("email");
+  const actions = Object.keys(ACTIONS).filter(k => ACTIONS[k].test(page.text));
+  if (page.hasForm && !actions.includes("form")) actions.push("form");
+
+  return {
+    url: finalUrl,
+    pageMethods: found,
+    pageActions: actions,
+    pageDeadline: findDeadline(page.text, new Date(item.published)),
+  };
+}
+
+function applyEnrichment(item, e) {
+  const out = { ...item, url: e.url || item.url, enriched: true };
+  if (e.pageMethods?.length) {
+    // The feed's "website" was only a fallback guess; trust what the page says.
+    const fromFeed = item.methods.filter(m => m !== "website" || item.methodsFromFeed?.includes("website"));
+    out.methods = [...new Set([...e.pageMethods, ...fromFeed])];
+  }
+  if (e.pageActions?.length) out.actions = [...new Set([...item.actions, ...e.pageActions])];
+  if (!out.deadline && e.pageDeadline) out.deadline = e.pageDeadline;
+  return out;
+}
+
+async function pool(list, n, fn) {
+  let i = 0;
+  await Promise.all(Array.from({ length: Math.min(n, list.length) }, async () => {
+    while (i < list.length) { const k = i++; await fn(list[k], k); }
+  }));
 }
 
 /* ------------------------------------------------------------------ */
@@ -298,11 +450,23 @@ export function merge(previous, fresh, now = new Date()) {
 async function main() {
   const args = process.argv.slice(2);
   const fixtures = args.includes("--fixtures") ? args[args.indexOf("--fixtures") + 1] : null;
+  if (args.includes("--page")) {
+    const url = args[args.indexOf("--page") + 1];
+    const resolved = /news\.google\.com/.test(url) ? await resolveGoogleNews(url) : url;
+    const { html } = await fetchPage(resolved);
+    console.log(resolved, "\n", readGiveawayPage(html), "\n", await enrich({ url: resolved, published: new Date().toISOString() }));
+    return;
+  }
   const sources = JSON.parse(await readFile(join(HERE, "sources.json"), "utf8"));
   const now = new Date();
 
   let previous = [];
-  try { previous = JSON.parse(await readFile(OUT, "utf8")).items || []; } catch {}
+  let droppedBefore = [];
+  try {
+    const prev = JSON.parse(await readFile(OUT, "utf8"));
+    previous = prev.items || [];
+    droppedBefore = prev.dropped || [];
+  } catch {}
 
   const status = [];
   const fresh = [];
@@ -321,15 +485,46 @@ async function main() {
   }
 
   // Same giveaway reported by several feeds: keep the first (sources are listed by preference).
+  const dropped = new Set(droppedBefore);
   const seen = new Set();
-  const unique = fresh.filter(it => !seen.has(it.id) && seen.add(it.id));
-  const items = merge(previous, unique, now);
+  const prevById = new Map(previous.map(it => [it.id, it]));
+  const unique = fresh
+    .filter(it => !seen.has(it.id) && seen.add(it.id) && !dropped.has(it.id))
+    .map(it => {
+      // Already visited on an earlier run: reuse what we found.
+      const old = prevById.get(it.id);
+      if (old?.enriched) return { ...it, url: old.url, methods: old.methods, actions: old.actions, deadline: it.deadline || old.deadline, enriched: true };
+      return { ...it, attempts: old?.attempts || 0 };
+    });
+
+  // Visit pages of giveaways we haven't read yet.
+  if (!fixtures) {
+    const queue = unique.filter(it => !it.enriched && it.attempts < ENRICH_ATTEMPTS).slice(0, ENRICH_MAX_PER_RUN);
+    const tally = { read: 0, dropped: 0, failed: 0 };
+    await pool(queue, ENRICH_CONCURRENCY, async it => {
+      try {
+        const e = await enrich(it);
+        if (e.drop) { dropped.add(it.id); tally.dropped++; console.log(`  – dropped (${e.drop}): ${it.title.slice(0, 70)}`); return; }
+        Object.assign(it, applyEnrichment(it, e));
+        tally.read++;
+      } catch (err) {
+        it.attempts++;
+        tally.failed++;
+        console.log(`  ! ${String(err.message || err).slice(0, 60)}: ${it.url.slice(0, 80)}`);
+      }
+    });
+    console.log(`Pages: ${tally.read} read, ${tally.dropped} dropped, ${tally.failed} failed (${queue.length} queued)`);
+    status.push({ name: "Giveaway pages", ok: true, fetched: queue.length, kept: tally.read });
+  }
+
+  const items = merge(previous.filter(it => !dropped.has(it.id)), unique.filter(it => !dropped.has(it.id)), now)
+    .map(({ methodsFromFeed, ...it }) => it);
 
   await mkdir(dirname(OUT), { recursive: true });
-  await writeFile(OUT, JSON.stringify({ generatedAt: now.toISOString(), sources: status, items }, null, 1) + "\n");
+  await writeFile(OUT, JSON.stringify({ generatedAt: now.toISOString(), sources: status, items, dropped: [...dropped].slice(-2000) }, null, 1) + "\n");
   console.log(`Wrote ${items.length} giveaways to ${OUT}`);
 
-  if (status.every(s => !s.ok)) process.exitCode = 1;
+  if (status.filter(s => s.name !== "Giveaway pages").every(s => !s.ok)) process.exitCode = 1;
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) main();
