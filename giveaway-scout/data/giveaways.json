@@ -1,1 +1,2272 @@
-{"generatedAt": null, "sources": [], "items": []}
+{
+ "generatedAt": "2026-10-14T15:46:51.945Z",
+ "sources": [
+  {
+   "name": "Google News · Gewinnspiele",
+   "ok": true,
+   "fetched": 73,
+   "kept": 38
+  },
+  {
+   "name": "Google News · Verlosungen",
+   "ok": true,
+   "fetched": 31,
+   "kept": 18
+  },
+  {
+   "name": "Google News · Tickets & Konzerte",
+   "ok": true,
+   "fetched": 96,
+   "kept": 43
+  },
+  {
+   "name": "Google News · Übernachtungen & Reisen",
+   "ok": true,
+   "fetched": 25,
+   "kept": 10
+  },
+  {
+   "name": "Google News · Erlebnisse",
+   "ok": true,
+   "fetched": 30,
+   "kept": 7
+  },
+  {
+   "name": "Google News · Instagram-Gewinnspiele",
+   "ok": true,
+   "fetched": 8,
+   "kept": 4
+  },
+  {
+   "name": "mydealz · Gewinnspiele",
+   "ok": true,
+   "fetched": 30,
+   "kept": 16
+  },
+  {
+   "name": "Reddit · r/giveaways",
+   "ok": true,
+   "fetched": 25,
+   "kept": 8
+  },
+  {
+   "name": "Giveaway pages",
+   "ok": true,
+   "fetched": 114,
+   "kept": 77
+  }
+ ],
+ "items": [
+  {
+   "id": "c322dh",
+   "title": "Gewinnt Tickets für die exklusive Premiere von \"Der perfekte Urlaub\" in Berlin – mit den Stars live vor Ort!",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9jRXlkOWRNZXVtQjV2WkpBNTNaaFQ3Qmd6d0tsRDN4c3RYMGN1cVBfVkRiU3UtVU5iZVBmSXFDRzJVSnFZVjFwaGF6c2VVOVdYS2p1a2tkZ3FMY2NoS1pWQXc2UQ?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Filmstarts",
+   "summary": "Gewinnt Tickets für die exklusive Premiere von \"Der perfekte Urlaub\" in Berlin – mit den Stars live vor Ort!",
+   "published": "2026-10-14T15:00:34.000Z",
+   "deadline": null,
+   "categories": [
+    "events",
+    "travel"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "eew2yh",
+   "title": "Mitmachen und gewinnen: Konzertkarten und mehr für Sie!",
+   "url": "https://www.br-klassik.de/aktuell/konzert-karten-gewinnen-aktion-100.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "BR Klassik",
+   "summary": "Mitmachen und gewinnen: Konzertkarten und mehr für Sie!",
+   "published": "2026-10-14T14:35:06.000Z",
+   "deadline": null,
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1eed6vo",
+   "title": "Gewinnspiel zu Jazzball in Warnemünde: OZ verlost Tickets und Hotelübernachtung",
+   "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQX2txalNhSG42UVloMXBrNER3N2JncWxpSkZrQjJnSy1iQWZ5d1ZDM1VyNGxzRVRWV3puZlRLTDl0c2dVNlFFWTRJeUZjdlRwaVVOT3NtUTNZUDRiNE1Ed19CNlpxVTA2ZEt4YTlndjlMdHFuRmhwaHNkMDZjV0M2VkFUQjhJMVhwTkp4OGNqSGNNaG1Ma1VwUnVFZGpieVg3TGlzaEoxN0tJc0M5MWUzMUN4WDZUX2lOSm9tamllMkxsUW5hZ1B1a1FhYkd3ZkdGdHRndEV2UTNsVWFEOHkwbVN4ZVRwT0xsVDZzcjF3a9IBiwJBVV95cUxPNThQWWlUSktUZVFMRW03dWpzX19xQ242cWdUVUtkT3VyaDRweVdHMG5fNXFTR3M2ZFhnQkx3SWhiV19USzBSY2FkNHM4b3hVc3lRX25PVVh2S0w5Rm43ZlZHSVcxT01DRE9tcFNDNDRPOUw0aVVuRkhILUI3R1RneXBGVmV1aWhQWXBnXzdNV2hUTWhCV3NiMFBoanF3SU9MekV6R0ZRQXFIRUFnQzVjNFA0YkhIZ0ZqcUhxbXY1MGxPelIzdHVNSDQwdnpMSUVyUy1rdmxRQlFzYnpJd1M0anRPVU9Ca1pBc1dvVmJvR3JlTUtoajhmZk1KbjZ4TXVhMXlPdXZldWZiTUE?oc=5",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Ostsee Zeitung",
+   "summary": "Gewinnspiel zu Jazzball in Warnemünde: OZ verlost Tickets und Hotelübernachtung",
+   "published": "2026-10-14T14:17:34.000Z",
+   "deadline": null,
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "2s2w3i",
+   "title": "Gewinnspiel: Gewinne 2x2 Tickets für Dardan am 19.10. in der LANXESS arena",
+   "url": "https://www.express.de/ratgeber/familie/gewinnspiel-gewinne-2x2-tickets-fuer-dardan-am-19-10-in-der-lanxess-arena-1395146",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Express",
+   "summary": "Gewinnspiel: Gewinne 2x2 Tickets für Dardan am 19.10. in der LANXESS arena",
+   "published": "2026-10-14T14:11:51.000Z",
+   "deadline": "2026-10-15",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1uhee3i",
+   "title": "Wie gut kennen Sie Sellin? Jetzt beim Quiz mitmachen und gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNTUV1TkprME93SlNwVDRJbzdmNWJMUDRQbHBVV19VMGVLRi14M1FhZTFqNkJoWE50Q29wVDVtZjBZd3lUaHh4QThHblE1dVVWNEE2S2JaTGRyUWdNSG01SklXRjNHUVFDSlA0c3BJcE16NUZvVEhXT1ZpNFVfWEtFZlJXV0w2RGxFNXBnRWNBVXZ3TWRUTnNSdFphNGNKU3JiSmIxaFpMeWplVTRQZjlTRjEzZWcwNjBIeHo3bE9zY3VPNDR1UnY4TllvQWhNT0tvbXpmRmtmNFpTeXRYM3d5NUxqONIB_wFBVV95cUxNcjlEU2FTVzlCOWFRTWxlb192UUtJZFh5TXFyNFhCUmtjZ2tOQnRyaGh6a1pNaERQNVBGUk03WVpYaGQ4NnRzUWRyVXNVWHlxSlByay14TFVRaE5TNkYyVkloUEp1RVRrako3bFFLV3ZKcm9EV0ZFVjFhRGphMkp0TVVVVGZ3ZTlqSFBHM2NvMnUxdnEtcWxpZWxzMXBCYXIwYXBNNlJIQjdWeGItb3JZUGdvNFJBQ2t2elpyeEduQTZ5TGRlT2cyZ05KMWlkd1lnbmRvTmNJUHRMUzVwM0VmaGsybnpPdkVHTHFqWWkyQ2k1S1RTc2J6SUkyOFlGR0E?oc=5",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Ostsee Zeitung",
+   "summary": "Wie gut kennen Sie Sellin? Jetzt beim Quiz mitmachen und gewinnen",
+   "published": "2026-10-14T13:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "107d7fi",
+   "title": "néomí – Tickets zu gewinnen",
+   "url": "https://www.musikblog.de/2026/10/neomi-tickets-zu-gewinnen/?amp=1",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "MusikBlog",
+   "summary": "néomí – Tickets zu gewinnen",
+   "published": "2026-10-14T13:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "4oveup",
+   "title": "1×2 Tickets für Sarah Brightman in München gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWndycEJzMmpyT0YzMWVXM3BtdUtqOUFFaThZTU9ocjFiNGt1UkJqNEFrTk9XZTJsa3FkNXdXbDFnUlN4bGFXcDRhaERzOFdEa0hyZURIanlmYjlycnJoemlJUnFuYkxSZlhBX0hoNTFGTWFuMjdOTUtGMHoxbUVuMjFONlA3bzRpdmxmUWYwTQ?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "PRINZ Magazin",
+   "summary": "1×2 Tickets für Sarah Brightman in München gewinnen",
+   "published": "2026-10-14T11:49:19.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "jk2b2f",
+   "title": "Mitmachen und die letzten Karten gewinnen: SÜDKURIER verlost Konzerttickets für Donaueschinger Musiktage",
+   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQOFNQUXUySVVESWpQTmdQYUg5bkJEay04RnZoeHZ2YXNMNmJEa0FOSWVieENyUndvdUxlOFkwcWZ5dzNQdWczbWFCMVhxSEp5U255SGNxYTJ2MWMyaThXNFRkaVdvazVRbmU2UTJPYU5ZQ3JEQ1U5d0VDWHdiWGk0dDJoNnhOU0NFOG95emlEbXA4Y1I1U1FiX3gwNzVKeEVQZmswLWNfYnJyTHFrRkNIRlZhd2pzRUQ1SDVhNEpnbk50Q3VuVm5nQ3plcm1pZnA2b3cxbjk5R2FpNG5Ba1JvR0hWLWJ0RWQtbzNj?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Südkurier",
+   "summary": "Mitmachen und die letzten Karten gewinnen: SÜDKURIER verlost Konzerttickets für Donaueschinger Musiktage",
+   "published": "2026-10-14T11:45:33.000Z",
+   "deadline": null,
+   "categories": [
+    "events",
+    "music"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "jx7fr7",
+   "title": "Mit ihrem neuen Album \"Sehnsucht\": Annett Louisan kommt nach Halle und Ihr könnt Tickets gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQWjJzaDdxaGk0T1VZNUZ3d0M4aHIzSmxheUsxcEdhT204bUZJc28xOVNzWENQS1BWZW53VjZDYlU5Um1Oc2JrMTZuRFowSy11UDd1eEhTOEJKQ082aVZ2akp0a1M0X2N3YXJVTzYyRFg3SUN1ZGRPYjBUR2hreTJ1bXJzZGNuTEpZVUNfY3Zod0d1TFZRR1lJYzRNUERORV9xVzlPUVpLdVQwMzV0dUlMc1JNLW0xNGwxZTFjV0QxTndzbGtNRFViWHp5YWM3WkFHenR0RFI4WmxJNDY2amVoREpjUmhjMGpMTnhtcg?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "TAG24",
+   "summary": "Mit ihrem neuen Album \"Sehnsucht\": Annett Louisan kommt nach Halle und Ihr könnt Tickets gewinnen",
+   "published": "2026-10-14T11:30:45.000Z",
+   "deadline": null,
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "x2b676",
+   "title": "1x2 Freikarten für Gregorian - The Magical Christmas Tour Paare-Gewinnspiel",
+   "url": "https://www.blick.de/gewinnspiele/paare/1x2-freikarten-fuer-gregorian-the-magical-christmas-tour-spiel12696",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "BLICK.de",
+   "summary": "1x2 Freikarten für Gregorian - The Magical Christmas Tour Paare-Gewinnspiel",
+   "published": "2026-10-14T10:51:52.000Z",
+   "deadline": "2026-11-08",
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1ems00z",
+   "title": "PAZ-Verlosung: Winterträume auf Schloss Eldingen - PAZ",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMWVRNFZCcHVBdHU3WFJ0bG1LaURDSDZiQmlKVlNxemNlb2lUYnRLcGdJc1ZCXzFZc3A4a2V6YjhQZTZMcHd1ODRxZENzRExCWjRnN3M0ZDB1eFVoWnd4UWdwMTNsMDl3MlBZS015aFVZZ1hmTHZzaVZGVGVkY2Etd3FPQnNIcEk0czZNdDliV3gwZ2FpOGd5ZnN1ZG4zVVl2d003S2pFMzE3NlI3SnZyeHY4d3VWdDVMdXEwZDlCN2Q3MkxyeGxLMA?oc=5",
+   "source": "Google News · Verlosungen",
+   "publisher": "PAZ - Peiner Allgemeine Zeitung",
+   "summary": "PAZ-Verlosung: Winterträume auf Schloss Eldingen",
+   "published": "2026-10-14T10:47:46.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "17apo0f",
+   "title": "Gewinnspiel: Gregorian bringen ihre „Magical Christmas Tour“ nach Chemnitz, Leipzig und Dresden",
+   "url": "https://www.blick.de/chemnitz/gewinnspiel-gregorian-bringen-ihre-magical-christmas-tour-gleich-dreimal-nach-sachsen-artikel14446077",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "BLICK.de",
+   "summary": "Gewinnspiel: Gregorian bringen ihre „Magical Christmas Tour“ nach Chemnitz, Leipzig und Dresden",
+   "published": "2026-10-14T10:29:06.000Z",
+   "deadline": "2026-11-08",
+   "categories": [
+    "music"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "f3lqnu",
+   "title": "Gewinnspiel: bluray-disc.de und Paramount Home Entertainment verlosen 3 x \"Landman - Staffel 2\" auf Blu-ray",
+   "url": "https://bluray-disc.de/blu-ray-news/gewinnspiel/160108-gewinnspiel_bluraydiscde_und_paramount_home_entertainment_verlosen_3_x_landman_staffel_2_auf_bluray",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Blu-ray-disc.de",
+   "summary": "Gewinnspiel: bluray-disc.de und Paramount Home Entertainment verlosen 3 x \"Landman - Staffel 2\" auf Blu-ray",
+   "published": "2026-10-14T10:26:57.000Z",
+   "deadline": "2026-10-27",
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "email",
+    "website"
+   ],
+   "actions": [
+    "comment",
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1rngsry",
+   "title": "Buch-Verlosung: Kirsten Liese – Maestro Muti",
+   "url": "https://www.concerti.de/verlosung/buch-verlosung-kirsten-liese-maestro-muti/",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "concerti.de",
+   "summary": "Buch-Verlosung: Kirsten Liese – Maestro Muti",
+   "published": "2026-10-14T10:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "website",
+    "email"
+   ],
+   "actions": [
+    "follow",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1h1eoid",
+   "title": "3x2 Freikarten für Englers Christmas Masters 2026 gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQY09SY0JHUWY4dTBCbTMtMFhrYzdRaExRb3BZWjNuWFdPUjVpY0pwZG9IYVBwZ2YzcHluSU5iMXh3SDl4OGdUai04YTdVSVM1SFFiZEpubXlOOEVwUzRNTnkyYWJ2MXYwNzk2ZjVkX3BPTkpFWFRNNllZVTZNcThRelRRc0x4cVhualo0cW5lalVWSnBDRFhUTzV3c21IbWh3Vl80?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "urbanite.net",
+   "summary": "3x2 Freikarten für Englers Christmas Masters 2026 gewinnen",
+   "published": "2026-10-14T09:47:09.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1onzvvy",
+   "title": "Fernweh Festival 2026: Tickets für Vorträge zu gewinnen",
+   "url": "https://www.photoscala.de/2026/10/14/fernweh-festival-2026-tickets-fuer-vortraege-zu-gewinnen/",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "photoscala",
+   "summary": "Fernweh Festival 2026: Tickets für Vorträge zu gewinnen",
+   "published": "2026-10-14T09:21:00.000Z",
+   "deadline": "2026-11-15",
+   "categories": [
+    "events",
+    "music"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1b8o4m5",
+   "title": "Familienkarte wird 20: Tickets für SnowWorld Neuss zu gewinnen",
+   "url": "https://dormago.de/dormagen-nachrichten.php?user_id=40393_Familienkarte+wird+20%3A+Tickets+f%C3%BCr+SnowWorld+Neuss+zu+gewinnen",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "DORMAGO",
+   "summary": "Familienkarte wird 20: Tickets für SnowWorld Neuss zu gewinnen",
+   "published": "2026-10-14T08:45:00.000Z",
+   "deadline": "2026-10-19",
+   "categories": [
+    "events",
+    "family"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "23d7tx",
+   "title": "Bayern Tickets gegen Arsenal und Dortmund bei Betano gewinnen",
+   "url": "https://www.wettbasis.com/sportwetten-news/bayern-tickets-gegen-arsenal-und-dortmund-bei-betano-gewinnen",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Wettbasis",
+   "summary": "Bayern Tickets gegen Arsenal und Dortmund bei Betano gewinnen",
+   "published": "2026-10-14T08:40:00.000Z",
+   "deadline": "2026-10-18",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1sb54p0",
+   "title": "Verlosung Herr der Ringe Ankerkraut Gewürze | Media - Screenshots",
+   "url": "https://www.dlh.net/de/screenshots/10475/verlosung-herr-der-ringe-ankerkraut-gewurze.html",
+   "source": "Google News · Verlosungen",
+   "publisher": "DLH.net",
+   "summary": "Verlosung Herr der Ringe Ankerkraut Gewürze | Media - Screenshots",
+   "published": "2026-10-14T08:09:00.000Z",
+   "deadline": null,
+   "categories": [
+    "food_drink"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "ehmp5y",
+   "title": "WAZ-Verlosung: Karten für Grizzlys gegen ERC Ingolstadt zu gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUXMtYVZHYzIzM21mTWNFR05jZWFXNkdnRmF1NDdvSVF2dWdhMTFkUDQ5RlpNTDFic1VCQTl3eWNlYWVlMkRHZTQ5cjdyd20zaVplZ3FOQkdWWkoxdlhuVzRSbkNVU3djOGtqM3JYamoxNVlhWnFpNFlpRW93ZTd0MWZyZzdrUW0yRDhTOUE5UW81M0IxdVVIcFMxZmt1RzBHTVkyQnFpbFZCeDlmaHBRd0x2ZG02OEU3d2VETXBzX2lDZmlpTEFvQm95NmtHYWZuQjgycGFPcVk1SWvSAfcBQVVfeXFMTUtJN3FJbWt3NEhlMlpOVXhObmdGazNSVnlmemtCb1BHenYxRF9mVnpIU1VPWFRJU2QyaFpPblBWenpzR0dpX240U0JHWTJhYjdLTzI2UUNOVHNVWlJuWVBmdjhUQ0lwQmNmNjJPN1M3a3hETi1BcFA1MnhEcVR5NC1YaWlKQ3ZfRmRhYmhheENxNDBxTmlCSlc0SEctQWxSZ283endWMHpzQjczVUk5YTd5U0dtWExWX3BJNUNpaC16TGVfRDgxMWtvWlB3TjllT21sUGJOeHpsaGJrV0VRN2xkUTNxU3VWWk9ZRkJ2TkhSdXl1V3JwUQ?oc=5",
+   "source": "Google News · Verlosungen",
+   "publisher": "WAZ-ONLINE.de",
+   "summary": "WAZ-Verlosung: Karten für Grizzlys gegen ERC Ingolstadt zu gewinnen",
+   "published": "2026-10-14T08:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events",
+    "sport"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "9wfv2j",
+   "title": "Ultraleichte Stirnlampe: Petzl NAO LT zu gewinnen!",
+   "url": "https://xc-run.de/aktuelles/gewinnspiele/ultraleichte-stirnlampe-petzl-nao-lt-zu-gewinnen/",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "xc-run.de",
+   "summary": "Ultraleichte Stirnlampe: Petzl NAO LT zu gewinnen!",
+   "published": "2026-10-14T07:50:20.000Z",
+   "deadline": "2026-11-05",
+   "categories": [
+    "sport"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1avexbm",
+   "title": "Gewinnspiel Maifeld live",
+   "url": "https://www.blick-aktuell.de/Berichte/Gewinnspiel-Maifeld-live-678264.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Blick aktuell",
+   "summary": "Gewinnspiel Maifeld live",
+   "published": "2026-10-14T07:28:00.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1znzp7",
+   "title": "Gewinnen Sie Tickets für „Old Shatterhand unter Kojoten“",
+   "url": "https://www.bild.de/sonstiges/bildplus-gewinnspiele-aktionen/old-shatterhand-unter-kojoten-tickets-gewinnen-6ab51f41e0200f794f12e9aa",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "BILD",
+   "summary": "Gewinnen Sie Tickets für „Old Shatterhand unter Kojoten“",
+   "published": "2026-10-14T07:26:34.000Z",
+   "deadline": "2026-10-14",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1u0qjlm",
+   "title": "Andy Borg bringt seine Schlager-Show nach Neustadt [Gewinnspiel]",
+   "url": "https://www.wochenblatt-reporter.de/neustadtweinstrasse/c-ausgehen-geniessen/andy-borg-bringt-seine-schlager-show-nach-neustadt-gewinnspiel_a909260",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Wochenblatt Reporter",
+   "summary": "Andy Borg bringt seine Schlager-Show nach Neustadt [Gewinnspiel]",
+   "published": "2026-10-14T07:03:22.000Z",
+   "deadline": null,
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website",
+    "email"
+   ],
+   "actions": [
+    "comment",
+    "like",
+    "follow",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1g9fgl6",
+   "title": "Gewinnspiel & Review zu „Forgotten Island“: Mehr Farbe, mehr Geschwindigkeit, mehr Wahnsinn geht nicht – die Kinder haben es geliebt",
+   "url": "https://www.familie.de/familienleben/gewinnspiel-review-zu-forgotten-island-mehr-farbe-mehr-geschwindigkeit-mehr-wahnsinn-geht-nicht-die-kinder-haben-es-geliebt--01M45NFKWJKDV11TCNE4BG90KQ",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "familie.de",
+   "summary": "Gewinnspiel & Review zu „Forgotten Island“: Mehr Farbe, mehr Geschwindigkeit, mehr Wahnsinn geht nicht – die Kinder haben es geliebt",
+   "published": "2026-10-14T06:07:06.000Z",
+   "deadline": "2026-10-15",
+   "categories": [
+    "family"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [
+    "share",
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "9x4llo",
+   "title": "50 Jahre Spider Murphy Gang: Wir verlosen Karten fürs Jubiläumskonzert in der Olympiahalle",
+   "url": "https://www.tz.de/muenchen/spider-murphy-gang-wir-verlosen-karten-fuers-jubilaeumskonzert-zr-94539671.html",
+   "source": "Google News · Verlosungen",
+   "publisher": "TZ",
+   "summary": "50 Jahre Spider Murphy Gang: Wir verlosen Karten fürs Jubiläumskonzert in der Olympiahalle",
+   "published": "2026-10-14T04:30:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events",
+    "music"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "rl4e40",
+   "title": "Ein Abend voller Disney-Magie: 3x2 Tickets für das Jubiläumstournee in Köln gewinnen",
+   "url": "https://www.rundschau-online.de/erleben/gewinnspiele/gewinnspiel-disney-in-concert-2026-1-1385388",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Kölnische Rundschau",
+   "summary": "Ein Abend voller Disney-Magie: 3x2 Tickets für das Jubiläumstournee in Köln gewinnen",
+   "published": "2026-10-13T23:00:23.000Z",
+   "deadline": "2026-10-22",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "email",
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "y8u85h",
+   "title": "Paramount Home Entertainment verlost 3 x „Landman - Staffel 2“ auf Blu-ray Disc",
+   "url": "https://bluray-disc.de/gewinnspiele/125604-paramount_home_entertainment_verlost_3_x_landman_staffel_2_auf_bluray_disc",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Blu-ray-disc.de",
+   "summary": "Paramount Home Entertainment verlost 3 x „Landman - Staffel 2“ auf Blu-ray Disc",
+   "published": "2026-10-13T22:01:03.000Z",
+   "deadline": "2026-10-27",
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "comment",
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "smkqp3",
+   "title": "Tickets gewinnen - Mit der SZ/BZ zu Thorsten Strotmanns magischem Jubiläum - Nachrichten",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQandNNm5jaVVQTXRlZUlENlVWVGhjS0ZsS3FFUTNtMS05Uzc0QkstbGxnTTRGVVZGTmRQN195dHNjc18wTDdIZ011dEd3a015eTNpVmFGeHBlY0lyWDJ4cUNUV015RU94VGtycWJJS0k5RkFHZGVqVG9HN1hKNVZiN1c3STRkbkEtNTRMZHUyVlVzWTFDaDhqSC1IYTQ?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Sindelfinger Zeitung / Böblinger Zeitung",
+   "summary": "Tickets gewinnen - Mit der SZ/BZ zu Thorsten Strotmanns magischem Jubiläum - Nachrichten",
+   "published": "2026-10-13T22:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1gtne37",
+   "title": "Gewinnspiel: Motango bringt Schlager-Laune nach Bobingen",
+   "url": "https://www.augsburger-allgemeine.de/schwabmuenchen/motango-begeistert-mit-schlagerkonzert-in-bobingen-und-verlost-karten-115490430",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Augsburger Allgemeine",
+   "summary": "Gewinnspiel: Motango bringt Schlager-Laune nach Bobingen",
+   "published": "2026-10-13T11:29:55.000Z",
+   "deadline": null,
+   "categories": [
+    "music"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "19bqvg7",
+   "title": "Jetzt mitmachen! Tickets für die große NFL-Watchparty gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTndwNFRxYzVjQnpLN1VTZWc0dERBbWFoV1QyQVRGRk5ZM1VzcTFFRzlyTGhvOFNuRzdJaFJTanNIWkFUNHNjU0FsMVZJeGhRbU1hcHJpYzRsR1RpT2h6S213LTNrb21xeVBUMTZnQzdnbGJUbDY3Q2JYeW1KaW5sX0hMekVEWEdJZzNYTFlOSlNUY215YTd6a21xYzBwTS1lMEh4TXJNLWVPMkpHR3c?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "HNA",
+   "summary": "Jetzt mitmachen! Tickets für die große NFL-Watchparty gewinnen",
+   "published": "2026-10-13T10:52:09.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "nqwqkg",
+   "title": "Gewinnspiel: Gewinne 1x2 Tickets für J. Cole am 15.10. in der LANXESS arena",
+   "url": "https://www.express.de/ratgeber/familie/gewinnspiel-gewinne-1x2-tickets-fuer-j-cole-am-15-10-in-der-lanxess-arena-1395079",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Express",
+   "summary": "Gewinnspiel: Gewinne 1x2 Tickets für J. Cole am 15.10. in der LANXESS arena",
+   "published": "2026-10-13T10:48:51.000Z",
+   "deadline": "2026-10-14",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1izhxij",
+   "title": "TV Gelnhausen empfängt Spitzenreiter – jetzt 2x2 Tickets gewinnen",
+   "url": "https://www.kreis-anzeiger.de/sport/lokalsport/tv-gelnhausen-empfaengt-spitzenreiter-jetzt-tickets-gewinnen-94537327.html",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Kreis-Anzeiger",
+   "summary": "TV Gelnhausen empfängt Spitzenreiter – jetzt 2x2 Tickets gewinnen",
+   "published": "2026-10-13T10:21:00.000Z",
+   "deadline": "2026-10-14",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "h3ucek",
+   "title": "Wir verlosen 5×2 Tickets für das Spiel der Pinguins gegen Nürnberg",
+   "url": "https://www.nordsee-zeitung.de/sport/wir-verlosen-5x2-tickets-fuer-das-spiel-der-pinguins-gegen-nuernberg-423025.html",
+   "source": "Google News · Verlosungen",
+   "publisher": "Nordsee-Zeitung",
+   "summary": "Wir verlosen 5×2 Tickets für das Spiel der Pinguins gegen Nürnberg",
+   "published": "2026-10-13T10:10:11.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "11yafwq",
+   "title": "Auto Trophy 2026: Mitmachen & BMW X1 gewinnen!",
+   "url": "https://www.autozeitung.de/auto-trophy-2026-leserwahl-gewinnspiel-301138.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Auto Zeitung",
+   "summary": "Auto Trophy 2026: Mitmachen & BMW X1 gewinnen!",
+   "published": "2026-10-13T08:59:11.000Z",
+   "deadline": "2026-10-19",
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "follow"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "w9izfq",
+   "title": "1×2 Tickets für Sarah Brightman in Leipzig gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUGJub0dwZkZKTzVIOWxDa3dVZU93YWZKM0tlcFFuN2JuUWJ0X0RsUncxUFRUOG8tZFdWdDdpbWo3N2FDZFZodzN5TjVJdEdSeGwxSmVwQTBCT213eTVpT2RNLUoyVkhyQjZ3Rm5qSWt3X213WkFXdGRqUVg1b0dHanZXNEtSSWpMRk16aWZn?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "PRINZ Magazin",
+   "summary": "1×2 Tickets für Sarah Brightman in Leipzig gewinnen",
+   "published": "2026-10-13T08:38:55.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "dva0a4",
+   "title": "Freikartenverlosung für die Veranstaltung „WinterTräume“ am Schloss Eldingen",
+   "url": "https://celler-presse.de/2026/10/13/freikartenverlosung-fuer-die-veranstaltung-wintertraeume-am-schloss-eldingen-3/",
+   "source": "Google News · Verlosungen",
+   "publisher": "Celler Presse",
+   "summary": "Freikartenverlosung für die Veranstaltung „WinterTräume“ am Schloss Eldingen",
+   "published": "2026-10-13T08:30:00.000Z",
+   "deadline": "2026-10-25",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "email",
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1y53upz",
+   "title": "Gewinnspiel mit Gallipoli für Xbox beendet",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxON0RsMERTN2VSUmUyT3R5enlCQ3VIX3dNdF9vTFVST2ZrTjFWdDRGekdpUXpXVE5iczdmTjE0WWJVbWtreHBMdzNQV0xxV3Zvck9hMng1dHhpRFNXaHdfSFAyRXAtRGJNNm9CMWR4U0dVQWEzak14QnUyRTJEMjZPelJqT1czbWh5bFJlLVVrTlNCb1BiU2UzNW9JTzB4TzRRNjI4YkQ5dllVRVkwZUlKMA?oc=5",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "XboxDynasty",
+   "summary": "Gewinnspiel mit Gallipoli für Xbox beendet",
+   "published": "2026-10-13T08:25:30.000Z",
+   "deadline": null,
+   "categories": [
+    "tech"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1x5gjqs",
+   "title": "Dinosaurier erobern Bruckmühl: Jetzt Tickets für die Dinorama-Show gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOdWJ5cjY4TjJUNEFtWFg1MnYwNUNmbjI1WkZLSWdEWFI4VDVOb0F3ZWF6VGlKOGJTU3VOWE12QVI1T3ZLZjd6VWptZXpiVFBNQ0syUTYyN1RwU1plMzFNdS1PUDVKbGk4bjNJb29SQ0RneUw0UjZoNkhwQ2RjX05WcHlqZXlZM2xQdmlnTmprRG1NbGI5UV9lVlVhVjlDTGg1dFNvZk1mNk5WR0s1Q3NIVUo2SEVkaG5EYXMweGdoWUJlREpPclFKX2xLSnNxWmwtWlRqSHpDQUxxZw?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Rosenheim24",
+   "summary": "Dinosaurier erobern Bruckmühl: Jetzt Tickets für die Dinorama-Show gewinnen",
+   "published": "2026-10-13T07:20:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "fbu5w7",
+   "title": "Gewinnen Sie eine Ninja Heißluftfritteuse",
+   "url": "https://www.welt.de/weltplus/gewinnspiele/article6ac8950479dbba342d294b53/gewinnen-sie-eine-ninja-heissluftfritteuse.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "WELT",
+   "summary": "Gewinnen Sie eine Ninja Heißluftfritteuse",
+   "published": "2026-10-13T07:11:19.000Z",
+   "deadline": null,
+   "categories": [
+    "household"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "sr3vxg",
+   "title": "Gewinnspiele - Wochenspiegelonline.de",
+   "url": "https://www.wochenspiegelonline.de/gewinnspiele/shine",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Wochenspiegelonline.de",
+   "summary": "Gewinnspiele",
+   "published": "2026-10-13T06:47:00.000Z",
+   "deadline": "2026-11-04",
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "phone",
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "j6kfox",
+   "title": "VIP-Tickets zu gewinnen: Mit Rundum-Sorglos-Paket zum SG-Heimspiel gegen die Füchse Berlin",
+   "url": "https://www.shz.de/sport/sg-flensburg-handewitt/artikel/tickets-zu-gewinnen-als-vip-zum-sg-heimspiel-gegen-fuechse-berlin-51321292",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "shz.de",
+   "summary": "VIP-Tickets zu gewinnen: Mit Rundum-Sorglos-Paket zum SG-Heimspiel gegen die Füchse Berlin",
+   "published": "2026-10-13T05:26:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website",
+    "email"
+   ],
+   "actions": [
+    "follow",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "10qpe7",
+   "title": "Wir verlosen Tickets für die Europe Tour 2026 von „SYNTHONY“: A Generation of Dance Music",
+   "url": "https://www.hallo-muenchen.de/gewinnspiele/gewinnspiel-synthony-generation-of-dance-music-94408147.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Hallo München",
+   "summary": "Wir verlosen Tickets für die Europe Tour 2026 von „SYNTHONY“: A Generation of Dance Music",
+   "published": "2026-10-13T04:00:00.000Z",
+   "deadline": "2026-10-22",
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "xs69q8",
+   "title": "„Guten Morgen, schönes Wetter heute“: Was Nachbarn verbindet (Verlosung)",
+   "url": "https://www.nordsee-zeitung.de/bremerhaven/guten-morgen-schoenes-wetter-heute-was-nachbarn-verbindet-verlosung-421373.html",
+   "source": "Google News · Verlosungen",
+   "publisher": "Nordsee-Zeitung",
+   "summary": "„Guten Morgen, schönes Wetter heute“: Was Nachbarn verbindet (Verlosung)",
+   "published": "2026-10-13T02:49:00.000Z",
+   "deadline": "2026-10-19",
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "phone"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "8on31o",
+   "title": "9 Fragen an CROPSTA aus „Höhle der Löwen“ (+ Gewinnspiel)",
+   "url": "https://www.basicthinking.de/blog/2026/10/12/cropsta-hoehle-der-loewen-dhdl-interview/",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "BASIC thinking",
+   "summary": "9 Fragen an CROPSTA aus „Höhle der Löwen“ (+ Gewinnspiel)",
+   "published": "2026-10-12T18:15:25.000Z",
+   "deadline": "2026-11-11",
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "email",
+    "website"
+   ],
+   "actions": [
+    "comment",
+    "follow",
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "hdi7g5",
+   "title": "VfL Wolfsburg - 1. FC Heidenheim: 1 x 2 VIP-Tickets zu gewinnen",
+   "url": "https://www.fupa.net/news/vfl-wolfsburg-1-fc-heidenheim-1-x-2-vip-tickets-zu-gewinnen-3223213",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "FuPa ⚽️",
+   "summary": "VfL Wolfsburg - 1. FC Heidenheim: 1 x 2 VIP-Tickets zu gewinnen",
+   "published": "2026-10-12T16:11:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "17i6yrm",
+   "title": "Wittichenau: Karnevalsverein gewinnt 2500 Euro bei MDR-Gewinnspiel",
+   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQd1BmR0plVjlwb0Jyd2syYmJVMno3Y0RmS2dVeWFzdUtYejBBMGdEeGs4N2VlQTNUdGFObzlzVU9mSTFaS3dyTmhqbGdsbTJNVU5adVh0RFlELWRsa1ZyQnd3OVhKOGtCUlowUEVMVDlOYXV0WVpMUkFPbEZrbG1mVkhaaWxpZE5PbFFYVGxIWlRMTlVMT2NDMV9tb3dvSF80NDYzSVpnd0hyejcwMEZOQ2VsSjV6dU5HM2kzbDhPbnpCaHhSQ3VGd0hoRjJVaFVDV2g4Tm5mVTQ3bUg1YXFScS01NDlKN2NFRDQ00gGHAkFVX3lxTE9lVm1YaWdGZnloa0xkRUFyQUhBSmZqeEYtOXNoUzc0ZWlfdDNHNmQxZnY2cHZ1RzVMVnlMY3RUS2U2dFJKSnZfMEp2N1FvTHZyTFMyZTlmLUNlT3JOY1p1MlBRVTV0aDI2NG1vR0daUko4bTBkZU11NGFzenpxdXdIcEdUcTFneGdzSmhrY1RRX1oyZ2RoTlZOMHY3dy00TU54a3VLd0FKQnN6UEl4Qm1zOHhPUEI0aHJfRUQ5Yzg1UDdQSm83Vl9BbWR5NDRxNHNSZ0t1aEE2aGx1VVg1ZlRjWk1oVkxfVkhiWUs0MFZmLW8zRWpocTFGajNQTll4TVJ1VnYybmhN?oc=5",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Sächsische Zeitung",
+   "summary": "Wittichenau: Karnevalsverein gewinnt 2500 Euro bei MDR-Gewinnspiel",
+   "published": "2026-10-12T15:59:20.000Z",
+   "deadline": null,
+   "categories": [
+    "cash_vouchers"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "vuqttq",
+   "title": "Rekord-Interesse an den Eisstockmasters in Dorsten: Wir verlosen den letzten Startplatz",
+   "url": "https://www.dorstenerzeitung.de/dorsten/rekord-interesse-eisstockmasters-2026-dorsten-letzter-startplatz-verlosung-w1258432-4002250832/",
+   "source": "Google News · Verlosungen",
+   "publisher": "Dorstener Zeitung",
+   "summary": "Rekord-Interesse an den Eisstockmasters in Dorsten: Wir verlosen den letzten Startplatz",
+   "published": "2026-10-12T15:30:00.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "comment"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "mhs7op",
+   "title": "MDR-Gewinnspiel: Wittichenauer Karnevalsverein gewinnt für Kostüme und Technik",
+   "url": "https://www.mdr.de/nachrichten/sachsen/bautzen/bautzen-hoyerswerda-kamenz/wittichenau-vereint-stark-gewinnspiel-mdr,lausitz-karneval-100.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "MDR.de",
+   "summary": "MDR-Gewinnspiel: Wittichenauer Karnevalsverein gewinnt für Kostüme und Technik",
+   "published": "2026-10-12T15:27:55.000Z",
+   "deadline": "2026-10-30",
+   "categories": [
+    "tech"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "isclhg",
+   "title": "Löhne: Tickets für Jess Jochimsen zu gewinnen",
+   "url": "https://www.westfalen-blatt.de/owl/kreis-herford/loehne/tickets-verlosung-jess-jochimsen-kabarett-werretalhalle-3680027?pid=true&ueg=default",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Westfalen-Blatt",
+   "summary": "Löhne: Tickets für Jess Jochimsen zu gewinnen",
+   "published": "2026-10-12T15:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "lmw82f",
+   "title": "Stadtwerke Bad Kissingen verlosen 50 Thermen-Gutscheine für Umstieg auf Online-Rechnung",
+   "url": "https://sw1.news/lokales/stadtwerke-bad-kissingen-verlosen-50-thermen-gutscheine-fuer-umstieg-auf-online-rechnungp/",
+   "source": "Google News · Verlosungen",
+   "publisher": "SW1.News",
+   "summary": "Stadtwerke Bad Kissingen verlosen 50 Thermen-Gutscheine für Umstieg auf Online-Rechnung",
+   "published": "2026-10-12T14:35:01.000Z",
+   "deadline": null,
+   "categories": [
+    "experiences",
+    "cash_vouchers"
+   ],
+   "methods": [
+    "facebook",
+    "website",
+    "email"
+   ],
+   "actions": [
+    "share",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1ebswpq",
+   "title": "1×2 Tickets für Sarah Brightman in Düsseldorf gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOY1hRaTBsNXdQdGFaNUN6SmZMX0F0QTU5MTJocnRuTGJnNmZxU01sWDU0QlczNWxRcF9saEVZMWE0Mnc4WFBSMkxOY3A1anFVNWpoUlZJSV9DaEJxV0ZLWFk4dVA3b2hrS0hrWHYzbDVabWNFS0VwUkNsM3hBNHFkOUJOYTNVQkJLMlZadTNaaHdsakE?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "PRINZ Magazin",
+   "summary": "1×2 Tickets für Sarah Brightman in Düsseldorf gewinnen",
+   "published": "2026-10-12T13:36:45.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "nysz44",
+   "title": "1×2 Tickets für Sarah Brightman in Berlin gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZGZtYTRDUWo0Rkd0eTJ0czZLTlNncEVYNXNyN2pkSGN6T05lNzkzR3JhbGVWazBiQnJDOGlvZTBjcklYcHJkVlEteU9VNWMwMU1UMHE5WU8zc1R3ZHhnZENFamJDV05GZlBZbndNb25YeldDaFlXUk9xaVpUNG1PNUM2TmVYZ2hZYkFTNg?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "PRINZ Magazin",
+   "summary": "1×2 Tickets für Sarah Brightman in Berlin gewinnen",
+   "published": "2026-10-12T13:36:25.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1iqit0w",
+   "title": "AC/DC-Feeling in Burgkirchen: Jetzt Tickets für große Rock-Show gewinnen",
+   "url": "https://www.rosenheim24.de/bayern/landkreis-altoetting/burgkirchen-gewinnspiel-fuer-ac-dc-rock-show-by-ac-dx-und-aerochicks-94537129.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Rosenheim24",
+   "summary": "AC/DC-Feeling in Burgkirchen: Jetzt Tickets für große Rock-Show gewinnen",
+   "published": "2026-10-12T13:20:19.000Z",
+   "deadline": "2026-10-19",
+   "categories": [
+    "events",
+    "music"
+   ],
+   "methods": [
+    "instagram",
+    "email"
+   ],
+   "actions": [
+    "comment",
+    "like",
+    "follow"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1swz1ob",
+   "title": "Verlosung: Dize und Bad Butler am 17. Oktober im Shiva in Bremerhaven",
+   "url": "https://www.nordsee-zeitung.de/nachrichten/verlosung-dize-und-bad-butler-am-17-oktober-im-shiva-in-bremerhaven-422976.html",
+   "source": "Google News · Verlosungen",
+   "publisher": "Nordsee-Zeitung",
+   "summary": "Verlosung: Dize und Bad Butler am 17. Oktober im Shiva in Bremerhaven",
+   "published": "2026-10-12T13:07:15.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1cyqj37",
+   "title": "Winterzauber in Hannover: Schaumburger Nachrichten verlosen Tickets für Herrenhausen",
+   "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQY0IwMHZsUjJlajFBektncW1FSkVpT09DZjduSnhNd2hLYU9oY3ctdGhZVUxOVUVoTFRibGdpWkRqN09XcXFwdEQycTNNMTAyT3A4N3o5TDhZbHE4aFIzZC1LOTRZNVZJTE9sY2NKZG5jaEdFVl9qeV9ndWppclRoSHotazdnUHE5a2Z0bFdsWXUwWjVtQmhDbTV6aVZGTlJkQjRGamtOUG1sSldLS0NSazd3YzBkdnZoa00xTXVtZThSWThON2tvM050Vm1zcm9EckJ2SGlyZ25jVnpkck9wQmRfN3NWdmpwOWowVVRPaGZyQdIBjgJBVV95cUxPaWluczhsb3JQU3J4NWE1YUFiQm83eTZHeEpIVTBlNzBFVGhleXI0Ym1DZ244UndIVWpIWFFPR2g3d0lzdW5NeHhCSEdTQnlpR3FEQW5LVVRkaWhaZzRqcnlxZGlaTVh6TTFwRzQwVmZ2UzR5NDEzZDFLUGdFYTBUQzVqWkdNZWFuQmVpTjJBLWZOSXV4Tk9SZFZVMThtN1c1STdJMmNRMGV0cE9BLVBlOW1fUU5JT3BVdGI0bUZ1cXBWS2lVYXNjNDdXa2I2cDJxWk5XRzAyZnpMZU56OG1nbmIxbjVQb0pObzlGMUxZR1BHZERfeHk2TWpsWFFOYjF1ZFlNTzBUXzBzU0JuWWc?oc=5",
+   "source": "Google News · Verlosungen",
+   "publisher": "Schaumburger Nachrichten",
+   "summary": "Winterzauber in Hannover:  verlosen Tickets für Herrenhausen Schaumburger Nachrichten",
+   "published": "2026-10-12T12:36:05.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "155o3ct",
+   "title": "A1 wird 30 und startet das größte Gewinnspiel seiner Geschichte mit unter anderem 3 VW ID. Polos",
+   "url": "https://newsroom.a1.net/news-a1-wird-30-und-startet-das-groesste-gewinnspiel-seiner-geschichte-mit-unter-anderem-3-vw-id-polos?id=250031&menueid=12658&l=deutsch",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "A1.net Newsroom",
+   "summary": "A1 wird 30 und startet das größte Gewinnspiel seiner Geschichte mit unter anderem 3 VW ID. Polos",
+   "published": "2026-10-12T11:15:32.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "7artnd",
+   "title": "Buch des Monats zu gewinnen - hier geht's zum Quiz!",
+   "url": "https://www.ndr.de/kultur/buch/buchdesmonats/buchdesmonats-126.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "NDR.de",
+   "summary": "Buch des Monats zu gewinnen - hier geht's zum Quiz!",
+   "published": "2026-10-12T10:40:00.000Z",
+   "deadline": null,
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1mowu84",
+   "title": "Album der Woche | 12.10. - 18.10.2026 mit Verlosung - Antonio Vivaldi: Fagottkonzerte",
+   "url": "https://www.radiodrei.de/musik/album-der-woche/antonio-vivaldi-fagottkonzerte.html",
+   "source": "Google News · Verlosungen",
+   "publisher": "rbb | radio3",
+   "summary": "Album der Woche | 12.10. - 18.10.2026 mit Verlosung - Antonio Vivaldi: Fagottkonzerte",
+   "published": "2026-10-12T10:10:00.000Z",
+   "deadline": "2026-10-18",
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "email",
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "hlh67m",
+   "title": "Gewinnspiel mit Ferghana Gaming-Stuhl Runde 2 beendet",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdTNtRUppak9hTFpMTGZ1cFE4X2VSRWZlbVEtRHZ0SVJrMnRrN2xNX0xDSVNqY2lhdHlCYnc3Wm5INkQ5LW9lcUE4NHJMNWJJQWF6bjM3bm96SGMzaDduZ3U2aG54dm1ybG5QMVFna0dmVlRnaEtDbk84WEhVU1EwWXRXTzd6RlVTVXV6TElCMXZIQ0VXUmFxc2haUndoUlI0YlRpTnd6a3U?oc=5",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "XboxDynasty",
+   "summary": "Gewinnspiel mit Ferghana Gaming-Stuhl Runde 2 beendet",
+   "published": "2026-10-12T09:50:00.000Z",
+   "deadline": null,
+   "categories": [
+    "tech"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "5ap7sy",
+   "title": "5 x 2 Tickets: Gewinnen Sie Freikarten für den „Krefelder Herbstzauber“",
+   "url": "https://rp-online.de/nrw/staedte/krefeld/krefeld-gewinnen-sie-5x2-freikarten-fuer-den-herbstzauber_aid-155718401",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "RP Online",
+   "summary": "5 x 2 Tickets: Gewinnen Sie Freikarten für den „Krefelder Herbstzauber“",
+   "published": "2026-10-12T09:38:00.000Z",
+   "deadline": "2026-10-14",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "phone",
+    "email"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "s2jer3",
+   "title": "Geheimer Standort: Luxuriöse Tegernsee-Immobilie wird verlost",
+   "url": "https://www.abendzeitung-muenchen.de/bayern/geheimer-standort-diese-luxus-immobilie-am-tegernsee-wird-verlost-art-1164948",
+   "source": "Google News · Verlosungen",
+   "publisher": "Abendzeitung München",
+   "summary": "Geheimer Standort: Luxuriöse Tegernsee-Immobilie wird verlost",
+   "published": "2026-10-12T08:34:00.000Z",
+   "deadline": "2027-01-03",
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "share",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "19yypgz",
+   "title": "‘Scared Shitless’-Verlosung: Blu-rays zu gewinnen",
+   "url": "https://www.metal-hammer.de/verlosung-blu-rays-fuer-scared-shitless-zu-gewinnen-2552261/",
+   "source": "Google News · Verlosungen",
+   "publisher": "Metal Hammer",
+   "summary": "‘Scared Shitless’-Verlosung: Blu-rays zu gewinnen",
+   "published": "2026-10-12T07:05:24.000Z",
+   "deadline": "2026-10-18",
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "website",
+    "email"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "qn58af",
+   "title": "Gewinnspiele Heft 23/2026",
+   "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-232026-freundinde",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Freundin",
+   "summary": "Gewinnspiele Heft 23/2026",
+   "published": "2026-10-12T07:00:00.000Z",
+   "deadline": "2026-10-30",
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "postcard"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "15w9tp5",
+   "title": "Jetzt gewinnen: Tickets für Pferde, Tanz und spektakuläre Showmomente",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNc1lxTVNhdDJ4NVh5aVB6MEh4Y1M4cHVwUlJXODVnVVhTYnYtWmlTZ2VsRjFtTDlDaE1HeElxRkhlcDBVR1REamJGRHlwdVpBU3Rac251T0RuclU1dDZSeENyNXR0ZTBJRTR0V1JWVzlEWkV5RXRoWEpxWk9kV3N1SmV0Z1lkaURC?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Sachsen Fernsehen",
+   "summary": "Jetzt gewinnen: Tickets für Pferde, Tanz und spektakuläre Showmomente",
+   "published": "2026-10-12T07:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "itlip2",
+   "title": "Eishockey-Gewinnspiel: Adler Mannheim gegen Kölner Haie",
+   "url": "https://www.wochenblatt-reporter.de/mannheim/c-sport/eishockey-gewinnspiel-adler-mannheim-gegen-koelner-haie_a831062",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Wochenblatt Reporter",
+   "summary": "Eishockey-Gewinnspiel: Adler Mannheim gegen Kölner Haie",
+   "published": "2026-10-12T05:30:08.000Z",
+   "deadline": "2026-10-18",
+   "categories": [
+    "sport"
+   ],
+   "methods": [
+    "email",
+    "website"
+   ],
+   "actions": [
+    "comment",
+    "like",
+    "follow",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1061rbg",
+   "title": "Gewinnt VIP-Tickets für die SWR3 Halloween-Party inkl. Eintritt in den Europa-Park",
+   "url": "https://www.swr3.de/events/unsere-events/halloween-party-europapark-tickets-gewinnspiel-100.html",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "SWR3",
+   "summary": "Gewinnt VIP-Tickets für die  Halloween-Party inkl. Eintritt in den Europa-Park SWR3",
+   "published": "2026-10-12T04:00:10.000Z",
+   "deadline": null,
+   "categories": [
+    "events",
+    "experiences"
+   ],
+   "methods": [
+    "instagram",
+    "email",
+    "website"
+   ],
+   "actions": [
+    "comment",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1w1nla8",
+   "title": "Birnenblatt Home Video verlost 3 x „Sketch“ auf Blu-ray Disc",
+   "url": "https://bluray-disc.de/gewinnspiele/125607-birnenblatt_home_video_verlost_3_x_sketch_auf_bluray_disc",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Blu-ray-disc.de",
+   "summary": "Birnenblatt Home Video verlost 3 x „Sketch“ auf Blu-ray Disc",
+   "published": "2026-10-11T22:00:51.000Z",
+   "deadline": "2026-10-25",
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "comment",
+    "follow",
+    "answer",
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "mg2zzu",
+   "title": "Europa-Park-Gewinnspiel: Wochenende mit SC-Freiburg-Spiel gewinnen",
+   "url": "https://www.bild.de/sonstiges/bildplus-gewinnspiele-aktionen/europa-park-gewinnspiel-wochenende-mit-sc-freiburg-spiel-gewinnen-6ac33aabd649c17058597bed",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "BILD",
+   "summary": "Europa-Park-Gewinnspiel: Wochenende mit SC-Freiburg-Spiel gewinnen",
+   "published": "2026-10-11T22:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "experiences"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "ynwg1r",
+   "title": "Tickets für Ralph Siegels Musical-Sensation \"Zeppelin\" gewinnen",
+   "url": "https://www.abendzeitung-muenchen.de/mehr/vorteilswelt/gewinnen/tickets-fuer-ralph-siegels-musical-sensation-zeppelin-gewinnen-art-1157287",
+   "source": "Google News · Gewinnspiele",
+   "publisher": "Abendzeitung München",
+   "summary": "Tickets für Ralph Siegels Musical-Sensation \"Zeppelin\" gewinnen",
+   "published": "2026-10-11T22:00:00.000Z",
+   "deadline": "2026-10-18",
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "email"
+   ],
+   "actions": [
+    "follow"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "126heha",
+   "title": "SCHWULISSIMO verlost - 5 Bücher: Die Tränen der Venus",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUlVjc3M5R2NHYWVyQkxXemZldUJHWGllQ25heTBaY0JkTm13TVkzcmNLbTVjY2swWWNqTERPZi1FaWxJOXUyRF9DYWVoS0RzYkcxZi03S1pxSVV2WmFRdW51QW5MTVhWM2ttMy1UblFSaF9MUW0tdWxLMzJMZGxiOWNaamxDNlE?oc=5",
+   "source": "Google News · Übernachtungen & Reisen",
+   "publisher": "SCHWULISSIMO.de",
+   "summary": "SCHWULISSIMO verlost - 5 Bücher: Die Tränen der Venus",
+   "published": "2026-10-11T17:20:00.000Z",
+   "deadline": null,
+   "categories": [
+    "books"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1yk3paw",
+   "title": "Geister im Tierpark Zabakuck / Jetzt Tickets gewinnen! / Update",
+   "url": "https://meetingpoint-brandenburg.de/artikel/19246-geister-im-tierpark-zabakuck-jetzt-tickets-gewinnen-update",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "meetingpoint. Brandenburg",
+   "summary": "Geister im Tierpark Zabakuck / Jetzt Tickets gewinnen! / Update",
+   "published": "2026-10-11T08:01:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "follow"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "iy52l4",
+   "title": "Besonderer Film: Freikarten für „The Piano Tuner“ im Mescheder Kino zu gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQcS02bTZBZEhCRkxmdENUN0NEWlRoajlmRXZDUndjLTIwaldQSzBFdk9HSHpMUTlNWTd0b19VMXRMZ1l1M1B2S0lZNnhwbGMtWmZ4NjRzRVdvOUZfNGZkWC13a3o1MXh4WjBHbFBjaW9ZVE90TFl1dWFacHFNdUMtSW81TFBBUFpUaURRb0J6M2pmbGl2REx0Z1NBYzJBeVZORVpIYUhORDE0MUdTMXotWF9zMmZFUVBtVzI0ZUd4UkY3ZWJYQzZCWUIzWHg1UDRWUk0tSG5BLWExVVN5c3c?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "WP | Westfalenpost",
+   "summary": "Besonderer Film: Freikarten für „The Piano Tuner“ im Mescheder Kino zu gewinnen",
+   "published": "2026-10-10T16:01:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "18so23h",
+   "title": "Borussia Mönchengladbach empfängt die TSG Hoffenheim: Gewinnen Sie 2x2 Tickets",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPcFZ3ekR0U2hoSjBzM0VfdlJPX1B4angwSVhGWmR0Mmw1U0RKOXNvY2xWTy1DVU8tT0Q5RXh5emFWSWpUVF9xMnEtV090VWYtOG9PR2FPV2ZyYzZuMnhjRXdUV25hRF9ZWnhOV2JxLWdhMDJSQ0FsOWRKanBoYkpRYUhLdmlIYmYzRHVRaFJFNWloRzdBZnp2a0lLLUt3d09POEpjdTd6cFRvWTRacGpVclpJTEZtV0M3V3VNam1ORUQ1bDdrTktRbnJQT09Pc2ZGLVRFZGctTFRZZHkyZFF6aHUwOUVBTnM?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "WAZ | Westdeutsche Allgemeine Zeitung",
+   "summary": "Borussia Mönchengladbach empfängt die TSG Hoffenheim: Gewinnen Sie 2x2 Tickets",
+   "published": "2026-10-10T15:45:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "19zgiw2",
+   "title": "Verlosung für 10x 2 Karten für die WinterTräume",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNODlXNWpoS2c1c3NZcnVxVzNVc0tCTHR2WWRCVUlYejRvMkh3LU5iOUl4Y3V4UXNZZjdqd1JhY3o1LUFpUk5lVXlrbDJ1UjIxeVI3WHZyZ1hGZE42SHZmZ3BYVi0tZXcxSjRYalJMX0trb244Zk1CMlpJZVp1SktTRDRCMlBrVnh6aEkzVXJuVFE1TVptdHpQeThGYndwQVFraDVjYm4wZVlMN1NGdk1kV0Q1Q2VvOXfSAdMBQVVfeXFMTVVTdWhWTFJvR1F0SHlxRDZuY3ZaU2t2ZUdYOWVCbHVHY3Z4TG5JYnYzMEJEWjZTeVB1RUx1ektaNkFQT1RUbjFMeHZjUW1USUZSTVlic2JjUXVyWUc3RjhfbE1NaXRNajdfME1Gd3JlTHUxNmNQMnJqS084R0pnV25Fc196UGlUUXBZandqR0lZeWREWVdSOVMtWDA0QXNocFpRWUdkQ0pyN1pMWXFqTk0teHVCMUVuRk1HRVlGM3JjWGhYaTlac3Fpd1hZc0l5cGFEbw?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Cellesche Zeitung",
+   "summary": "Verlosung für 10x 2 Karten für die WinterTräume",
+   "published": "2026-10-09T22:13:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1e9fd40",
+   "title": "Jazzfest in Aalen: Karten für fünf Festivaltage zu gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRFQtOHlaMnh3SjRJQmY3RkxNR29sSzBhd0lmWVc3N20zcGxzRHZfNUhMS0NwT3NyWHdlaWdhZVcwRHF4NTNXMTZTM3d2c29lRnpmWUJ4d3FZNVQtVHVwNEJBVlFKQnpyRzdkTWlUZ1RfTmk3OE83ZmFCVGRBOWVhZkVaalMxNUdjaXljVktUVU1tMXR3QkJlU2RwVHhtWWNUR05uYmNvaXRSeExpcmFiR1VMVkFTU29UR0JaWHdxSXZIdGRZYmc?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Schwäbische Post",
+   "summary": "Jazzfest in Aalen: Karten für fünf Festivaltage zu gewinnen",
+   "published": "2026-10-09T14:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "music",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "ui342o",
+   "title": "Gewinnspiel im Blick: Werbering Goch bereitet das Fest der Sinne vor",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbFUyXzJ6ZDZ6VmVaOWxYNDFTajZmWU5oOWFmRzFRenJkNGU3a3Fwd213WEVpM2g1aEx0OWVRd2lNM012MkQ5bWsxX1d4N3AzeWJ4ei05WWlWMVNmdTdJQlVJRTB3ZldvZHNWczZSR1NTb0hTNGYxSkZTUHE3ZDVWQ1NseVh1YWVBX3pOOUJtWVZNMkhzT3l0UjY5UlY2U3p3NEFhdWJuanJPS29OdWNzZmt3?oc=5",
+   "source": "Google News · Erlebnisse",
+   "publisher": "RP Online",
+   "summary": "Gewinnspiel im Blick: Werbering Goch bereitet das Fest der Sinne vor",
+   "published": "2026-10-09T11:40:00.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "r4rrbg",
+   "title": "STIHL-TIMBERSPORTS-WM: Jubiläumssäge und Tickets gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMFpxTG5UUTh1SEFfbXdLT19ZNk5aOEl4RDNDZnNza1lLYk51d3I5UG5IN29sdkVESmZIeF9nTHc1dUpjSk96ejJwdU9oWmdWMGlkd3dRM0hlMXozSEJnUXBBQXZ3T3FjOHJyY2t2RFBUci16NnlPd2JNY01IakNNRW9ldVVEdDQ0T0RDQTAtZ1RTMGFFWWZzVERSeWpPMDNDeHJYTXRDWkFjSWN3Tk9GRDBCdmNXQ0RkQmkwZHlDU3IyUUNGdzJwVTRZdTBpRGdyam9USm5sejdiNHFi?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "BILD",
+   "summary": "STIHL-TIMBERSPORTS-WM: Jubiläumssäge und Tickets gewinnen",
+   "published": "2026-10-09T10:12:50.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "e0k141",
+   "title": "Lachen und mitsingen: Gewinne 8x2 Tickets für „NightWash – Das Sing Ding“",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxON2NYejZYNTJGM1VhQVZiaGxhbUFwV0JTTktBUTJ3cGVrWUQzWXpqQkZDVk42YWFoLVFPMDFQVllobW43R2lNRjdfdUdnbTlYSnd0ekE4MzdlU0xKbmxkV2ZtdFdiLUl4MzFLX1FKSEQzUFhSMWF5eHpBU1J1c3JPcEtEaTZ4QzE0WXZUMHdOZE13Zw?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Express",
+   "summary": "Lachen und mitsingen: Gewinne 8x2 Tickets für „NightWash – Das Sing Ding“",
+   "published": "2026-10-09T09:20:00.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1xultdg",
+   "title": "Ein Boxspring-Bett Elva im Wert von 5.000 € zu gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMF8xYVlqX0lod2dCaG45ZzNsX1JTVlFNdnJqaTc1Rm5NQzBXQkY0MDZuenoycEJXMEVQcF9TbzR4d2YwdkZCRVdiT2EwbWdnVGhSQ2lianhJNWE3Z21zcWY2UWxUcTZnd0V3TndLT3k2b0NTeFNJd0s3emxZZnB0djhDaDl1V3R5?oc=5",
+   "source": "Google News · Übernachtungen & Reisen",
+   "publisher": "schoener-wohnen.de",
+   "summary": "Ein Boxspring-Bett Elva im Wert von 5.000 € zu gewinnen",
+   "published": "2026-10-09T06:58:26.000Z",
+   "deadline": null,
+   "categories": [
+    "cash_vouchers"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1b7j4pd",
+   "title": "Zum 10-jährigen Jubiläum: wir verlosen an euch 11 Knaller-Gewinne",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMFEwUUhHdm1tUTlGT1dua1ZfTUR0QWZVcEw4djZlZGVYZ1gtMklQWU5HZTBnU2I1eTNUWXZvM3Y1bG91eGY1SGJFYkFFQkNKWV94cmF5RTNodEg5UnowYTVvdGlXRUxUNmg5bTBqYnBkLWVzM1FLTDYwZGMzSVlNdnBYRDhWT292LWt6YTU5M0F3Y0pLRW9CUA?oc=5",
+   "source": "Google News · Übernachtungen & Reisen",
+   "publisher": "Echte Mamas",
+   "summary": "Zum 10-jährigen Jubiläum: wir verlosen an euch 11 Knaller-Gewinne",
+   "published": "2026-10-09T06:36:47.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1dvkkvl",
+   "title": "2×2 Tickets für DOK Leipzig 2026 gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWjJXdlJuVnVtS0pJUnlHRFBBZExfYzlSN1hOcjVBZkZxRGR6UnlhNUFWVWlJWGxRMkNaRnhWU2pJaFlvOFBrbUo1eUtTOUZ2dmo4WUpIUGc5ZUZvMjBjMzI2UU9oZS1QSUF5XzBCUy1nMDdLazhBeVpCZnROQ3VXcWJrMXNSNXFBUGhZd1JkUEx6QQ?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "urbanite.net",
+   "summary": "2×2 Tickets für DOK Leipzig 2026 gewinnen",
+   "published": "2026-10-08T11:30:13.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1kqonr4",
+   "title": "BTS-Fieber in Garbsen - Die spektakuläre „ARIRANG“-Welttournee kommt ins CineStar – GCN verlost 4 x 2 Kinotickets für jede Vorstellung!",
+   "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQTU9FNGw1QWhmVUZlcEJKOFJZUG9uMjNSZmtUcExjTEljck1Ja0Y3cFFaN2lXeXZiTzUxWHR4VVhGVk5QYXpDYkZFeVUzbzE0ZDNUNUlIMWwzMklXZEhmTFBNdkxib2o0T3dEeTB4OTYteF8yM2lneGtXdzhrYURmVmNxTjd6bGNNOWxlRG5UaENWU2VzaW5HUHkwYjlmY2FHWUJ2dW9FS2oxUWltam9QMDFLOXdEMWVkQ2ZEUGhyVWwzZGE0Vm8yX1VWd2NjMlVXMVNZZDJoVk9EV2liOVYyM1Jlc19rSkluMXl2cDNnQTdWMDVTcjV1cDUwTDlZeFk?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Garbsen City News",
+   "summary": "BTS-Fieber in Garbsen - Die spektakuläre „ARIRANG“-Welttournee kommt ins CineStar – GCN verlost 4 x 2 Kinotickets für jede Vorstellung!",
+   "published": "2026-10-08T10:46:17.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1617kcn",
+   "title": "Verlosung: 1x 2 Tickets für Hannover 96 gegen FC St. Pauli zu gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZTZRR0lFU3hGV2tiV1RucmU2cUh0MDFMZ3pVM0xEQ1NqOF9ZMTJDeTRCbHk1LTY1ZlRmcXZMWUtCcFM3X3lranBFcGgxS1hoQ0tMTUN6NlpXUmVFMC1keWdjbVpkbXRkVmVEUDJkZGdKS3NQaktITnE4Qkg2M0pmenJuVmlsWmU0TTVHVFFENkVEVHhvWF9XcW1IS1gyMFVnRHlDMS10eEdGNnJmV0tGUTRMS1V4bVVNRUE4NzlkT1U4S3AwQWlnbkgzTDFub0XSAesBQVVfeXFMTno2WVlrRVRjeEhOYjIxLU5fcWlzZ19ZOWU4RS1iLUhEQWlYOF9Yb2NlU0FROHM3NFFfOG52VHlwRXcybEVVZkFTZTJXMmtHVmtRam1DTy0yNVM4MHZOOWtZNzRBbFNFaXJRNzdHcGQwd3pJdkdnUll6LUVyU3hfaUdJX0xnOFVrd2lPMWxNZGhmNmgxNEpWZnpXT19vcHZaSE5rWnNOMlM2Yk04OVI1Mi01ZGlkYkVFc1I1bDMzVDZCbGlycFRkUVl0SVdhd1dQaVM2eXNoZXc2VTRXZ1NYZFl4XzYwdGtsY1Etcw?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Cellesche Zeitung",
+   "summary": "Verlosung: 1x 2 Tickets für Hannover 96 gegen FC St. Pauli zu gewinnen",
+   "published": "2026-10-08T10:08:05.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1bplg9e",
+   "title": "Tickets für die Hägerländer in Stadthagen gewinnen",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWTVVRHZFSHp6OTQ1aEcyaGZQUnlycGlhOThDYjBXZzI1NmJ4V0V4N0ZIVnJrbmtNcWl2c1NuTFFBclpCVTBTQUY3X3Fnb3lkcjM1Z1llWUZxWFY0R2dJS1hyeEtvQUs3cmhlZ2szRmJaRDdzX2Z5NmNCMWdFUXBIenJZTkZEM2h5Yjlzb09mRl9SZUdMVkNQT29GNFZ6NzJTWGh4bTZvVjJYbFdiOUxUN0lxN3h5T1JlUXdUdlpsOHhpR0J0RnZaOWdVcEhfUE1sNkFZME1WVdIB8wFBVV95cUxPOTRUUHhkMzNSamNPSkYycmU0MjBPMTh1Rk8wNENRX3UyTG9LUk5NYkRKcGo1c0tRTG1WZEtlMlVEZ05XdmhZNjg1Tk1kNGtPdnJtLXplMUFPSDFmaHhMWGlpdVZoaU1pbDU0QmlXYlc1YWZleGFWcXQtNTBScXVPQWw2N0phbEx4YlA5UTRvUEtjWXRJdGV1NThsZC13eDlYZmJYUUdfWGFrWVhoSkIzX1Q4VTNhbnN0Z0hVSmNUSkJUb05FVzZDOEV1d3NudjBWMEI5VlR3azFQRHpETlVuXzJlYVBQZG9vaXhBeE9BQmJFUlU?oc=5",
+   "source": "Google News · Tickets & Konzerte",
+   "publisher": "Schaumburger Nachrichten",
+   "summary": "Tickets für die Hägerländer in Stadthagen gewinnen",
+   "published": "2026-10-08T08:43:32.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "hrrw3i",
+   "title": "Gewinnspiel: Luxuriöse Auszeit im »Mandarin Oriental Palace, Luzern«",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOT01lamd5eVAyQThDV2g3REo5WDVsRDJENU01LXd5Q2h5S3Zmb1hDNzdvVmxDdVJfaGVYd0E3cXZLT3BZUHNXcHNhQjEzSXVhT1Q3Unk0WlNmWUVtdTlTem1odEVKV0cyMVRVWmJkSGpvVzE2UmFJVWpNS2ZKWU1ocndiUWJoYnJ0LVlxc002Rk9YZXhORXkyaUIwb1l1akU?oc=5",
+   "source": "Google News · Übernachtungen & Reisen",
+   "publisher": "Falstaff",
+   "summary": "Gewinnspiel: Luxuriöse Auszeit im »Mandarin Oriental Palace, Luzern«",
+   "published": "2026-10-08T07:00:00.000Z",
+   "deadline": null,
+   "categories": [
+    "stays"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 1,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "wwf0pn",
+   "title": "LVM Gaming Season 08 Gewinnspiel",
+   "url": "https://www.mydealz.de/diskussion/lvm-gaming-season-08-gewinnspiel-2846816",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Es gibt von LVM Gaming eine neue Season, mit einem Gewinnspiel. Die Season ist heute (01.10.2026) gestartet und geht bis Ende des Jahres. Codes findet man in Streams, bei Insta, YT und Code. Gewinnen kann man einen Gaming PC, Gaming Stuhl, Xbox Controller und Steam Gutscheine. Immer zum Monatsende werden die Gewinner gezogen. Es lohnt sich also regelmäßig Codes einzugeben und mitzumachen. Hier all",
+   "published": "2026-10-01T14:17:21.000Z",
+   "deadline": null,
+   "categories": [
+    "tech",
+    "cash_vouchers"
+   ],
+   "methods": [
+    "instagram",
+    "youtube"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "rn66ox",
+   "title": "Gratis 1 Monat Bild Plus - endet automatisch | Bild+ umsonst - selbstendend | Verlosung - Gewinnspiel",
+   "url": "https://www.mydealz.de/diskussion/gratis-1-monat-bild-plus-endet-automatisch-bild-umsonst-selbstendend-verlosung-gewinnspiel-2841025",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Ihr bekommt über den Link zum Oktoberfest 1 Monat Bild+ (BILD PLUS) Kostenlos. Es ENDET AUTOMATISCH - keine Kündigung notwendig. WIE GEHT‘S? -> 1. Deal-Link anklicken -> 2. Ganz runter scrollen -> 3. Unten rechts auf das Becher Spiel klicken. -> 4. Man gewinnt nahezu jedes Mal. Wenn es beim ersten Mal nicht klappt, einfach im Incognito Modus erneut anklicken. Ich habe beim ersten Mal gewonnen und ",
+   "published": "2026-09-18T11:55:23.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1i3nv9x",
+   "title": "LaRoche Posay Routine Produktprobe (Gewinnspiel, Freebie)",
+   "url": "https://www.mydealz.de/diskussion/laroche-posay-routine-produktprobe-gewinnspiel-freebie-2838711",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "https://campaigns.larocheposay.de/quiz/1832775_1221/larocheposaygewinnspiel.html?fbclid=PAb21jcAUTgFdwZG9mAmV4dG4DYWVtATAAYWRpZAGrOvolvyoUc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnESaKyC5gFRpLVb4W_jzu5Gv7Yt5NNnBUAS6WbSnyVqNKNDzkhaVl9ruJjwQ_aem_yXtApIEqHbyhYDR31Vw7PQ&utm_medium=paid&utm_source=ig&utm_id=120254516566950260&utm_content=120254660993140260&utm_term=120254660993150260&utm_campaign=1202545",
+   "published": "2026-09-13T13:15:58.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "9ptavd",
+   "title": "Captcha chess",
+   "url": "https://www.mydealz.de/diskussion/captcha-chess-2831290",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Was soll das?? (lol) (lol)",
+   "published": "2026-08-27T12:34:24.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1eahhy6",
+   "title": "mydealz bei der Jetski Star WM am 29.08. um 20:15 Uhr auf RTL - 5x 2 Tickets zu gewinnen!",
+   "url": "https://www.mydealz.de/diskussion/jetski-star-wm-2821401",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "mydealz goes RTL , zumindest für einen Abend. Am 29. August sind wir offizieller Team-Partner der Jetski Star WM , welche ab 20:15 Uhr live im TV auf RTL und online auf RTL+ übertragen wird. [shortcode id=\"20333589\"/] Dementsprechend wird eines der Teams , welche jeweils aus zwei prominenten Gesichtern bestehen, mit unserem Logo um den Sieg auf der Duisburger Regattabahn ins Rennen gehen. Wer gena",
+   "published": "2026-08-06T10:20:27.000Z",
+   "deadline": null,
+   "categories": [
+    "beauty_fashion",
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1pw75uk",
+   "title": "Gewinnspiel: 100 € Erlebnis-Gutschein bei Sponties",
+   "url": "https://www.mydealz.de/diskussion/100-eur-erlebnis-gutschein-bei-sponties-kostenlos-ohne-abo-falle-2817964",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Ich bin zufällig über Sponties gestolpert und finde die Idee ehrlich gut: eine kostenlose, werbefreie Plattform, um gemeinsam was zu unternehmen und neue Leute in der Nähe kennenzulernen – geplant oder spontan. Ist noch ziemlich neu und klein, aber genau deshalb ist man ja früh dabei. Und gerade läuft dort ein Gewinnspiel: 100 € Erlebnis-Gutschein für eine Unternehmung eurer Wahl (Kochkurs, Klette",
+   "published": "2026-07-29T14:38:53.000Z",
+   "deadline": null,
+   "categories": [
+    "cash_vouchers",
+    "experiences"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "n0gsym",
+   "title": "McCain: Gewürzsalz für die ersten 1000 Teilnahmen garantiert bei Kauf und Kassenbon-Upload von 2 McCain Produkten, ab 01.08.26",
+   "url": "https://www.mydealz.de/diskussion/mccain-gewurzsalz-fur-die-ersten-1000-teilnahmen-garantiert-bei-kauf-und-kassenbon-upload-von-2-mccain-produkten-ab-010826-2817654",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Aktionszeitraum vom 01.08.2026 - 31.12.2026 https://mccain-gewinnspiel.de/ Die ersten 1.000 Teilnehmer/innen, die sich erfolgreich registrieren und die Teilnahmebedingungen erfüllen, erhalten jeweils ein Gewürzsalz. Eine gesonderte Auslosung entfällt. Die Ziehung der Gewinner/innen erfolgt nach Eingang der ersten tausend validen Teilnahmen. Die Zustellung des Gewürzsalzes erfolgt innerhalb der dar",
+   "published": "2026-07-28T21:29:11.000Z",
+   "deadline": null,
+   "categories": [
+    "food_drink"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "form"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1c1zjw7",
+   "title": "Mezzo Mix und RTL+ Gewinnspiel: 3000 RTL+ Premium Abos zu gewinnen",
+   "url": "https://www.mydealz.de/diskussion/mezzo-mix-und-rtl-gewinnspiel-3000-rtl-premium-abos-gewinne-2815331",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Im Rahmen der erneuten Kooperation von Mezzo Mix und RTL+ gibt es wieder ein Gewinnspiel, bei dem man eins von 3000 RTL+ Premium Abos gewinnen kann: » https://www.presseportal.de/pm/72183/6319902 «. (Vermutlich gibt es bei der zur Aktion veranstalteten Roadschow in NRW & Berlin auch einige Goodies.)",
+   "published": "2026-07-23T10:54:20.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1k2g3g2",
+   "title": "5000x Sonneschutz CeraVe",
+   "url": "https://www.mydealz.de/diskussion/5000x-sonneschutz-cerave-2806083",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "5000x DieNEUE Sonnencreme von Cerave testen. Bekannt aus der Werbung! https://campaigns.cerave.de/quiz/1789866_1221/ceravegewinnspiel.html Neu: Sonnenschutz für Gesicht und Körper CeraVe Invisible Feuchtigkeitsspendender Sonnenschutz LSF 50+ bietet zuverlässigen Schutz vor UVA- und UVB-Strahlen und eignet sich zur täglichen Anwendung für jeden Hauttyp. Die Vorteile auf einen Blick: Sehr hoher Sonn",
+   "published": "2026-07-03T15:01:12.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "12mzju7",
+   "title": "Gewinnspiel Parfum Probe Yves Saint Laurent MYSLF. EAU DE TOILETTE INTENSE.",
+   "url": "https://www.mydealz.de/diskussion/freebie-parfum-probe-yves-saint-laurent-myslf-eau-de-toilette-intense-2802935",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "https://ecampaign.yslbeauty.de/quiz/1799593_1221/YSL_MYSLF_EDTI_eSampling_META.html Ein neues Parfum von Yves Saint Laurent für Herren, erschienen im Jahr 2026. Der Duft ist zitrisch-blumig. Es wird von L'Oréal vermarktet. Kopfnote Bergamotte Herznote Orangenblüte Absolue Ambrofix indonesisches Patchouli Basisnote weißer Moschus Anbei nocj das Marketing Gelabber: Entdecke MYSLF EAU DE TOILETTE INT",
+   "published": "2026-06-26T14:33:18.000Z",
+   "deadline": null,
+   "categories": [
+    "beauty_fashion"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [
+    "answer"
+   ],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1dorw5x",
+   "title": "Mediamarkt SnapDragon Gewinnspiel (Tomorrowland Tickets)",
+   "url": "https://www.mydealz.de/diskussion/mediamarkt-snapdragon-2792296",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Falls wer zufällig im Mediamarkt vorbeikommt bitte ein Bild schicken vom letzten Puzzle Stück",
+   "published": "2026-06-08T13:18:56.000Z",
+   "deadline": null,
+   "categories": [
+    "events"
+   ],
+   "methods": [
+    "website"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1vd38v7",
+   "title": "Wo findet ihr aktuell die besten Gewinnspiele?",
+   "url": "https://www.mydealz.de/diskussion/wo-findet-ihr-aktuell-die-besten-gewinnspiele-2790576",
+   "source": "mydealz · Gewinnspiele",
+   "publisher": "",
+   "summary": "Hallo zusammen, ich nehme gelegentlich an Gewinnspielen teil und habe das Gefühl, dass viele gute Aktionen mittlerweile gar nicht mehr so leicht zu finden sind. Wo informiert ihr euch aktuell über neue Gewinnspiele? Instagram? Facebook? Newsletter? Spezielle Gewinnspielseiten? Habt ihr dieses Jahr schon etwas gewonnen? Mich würde interessieren, welche Quellen ihr regelmäßig nutzt und welche ihr em",
+   "published": "2026-06-05T06:12:08.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "instagram",
+    "facebook"
+   ],
+   "actions": [],
+   "eligibility": "DE",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "1163ok0",
+   "title": "💄 Win the ultimate luxury lip set! 💄 Christian Louboutin Rouge Lip Trio",
+   "url": "https://www.reddit.com/r/giveaways/comments/1mp9nqw/win_the_ultimate_luxury_lip_set_christian/",
+   "source": "Reddit · r/giveaways",
+   "publisher": "",
+   "summary": "submitted by /u/misophonia [link] [Kommentare]",
+   "published": "2025-08-13T16:46:25.000Z",
+   "deadline": null,
+   "categories": [
+    "other"
+   ],
+   "methods": [
+    "reddit"
+   ],
+   "actions": [
+    "comment"
+   ],
+   "eligibility": "unknown",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  },
+  {
+   "id": "v33224",
+   "title": "Giveaway for our latest game!",
+   "url": "https://www.reddit.com/r/giveaways/comments/1mp72ed/giveaway_for_our_latest_game/",
+   "source": "Reddit · r/giveaways",
+   "publisher": "",
+   "summary": "submitted by /u/MalboMX [link] [Kommentare]",
+   "published": "2025-08-13T15:09:16.000Z",
+   "deadline": null,
+   "categories": [
+    "tech"
+   ],
+   "methods": [
+    "reddit"
+   ],
+   "actions": [
+    "comment"
+   ],
+   "eligibility": "unknown",
+   "attempts": 0,
+   "enriched": true,
+   "firstSeen": "2026-10-14T15:46:51.945Z"
+  }
+ ],
+ "dropped": [
+  "1gsf33",
+  "u17hry"
+ ]
+}
