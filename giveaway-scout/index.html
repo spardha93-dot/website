@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Giveaway Scout</title>
   <meta name="description" content="Live giveaways in Germany by category and entry method — plus a tracker and scam check." />
   <meta name="robots" content="noindex" />
@@ -34,6 +34,7 @@
         --line: #36312b; --accent: #e07a55; --accent-soft: #3a2a22;
         --ok: #6cc28f; --ok-soft: #1f3327; --warn: #e2a84a; --warn-soft: #3a2f1b;
         --bad: #f08a80; --bad-soft: #3d2220;
+        color-scheme: dark;
       }
     }
     :root[data-theme="dark"] {
@@ -41,6 +42,7 @@
       --line: #36312b; --accent: #e07a55; --accent-soft: #3a2a22;
       --ok: #6cc28f; --ok-soft: #1f3327; --warn: #e2a84a; --warn-soft: #3a2f1b;
       --bad: #f08a80; --bad-soft: #3d2220;
+      color-scheme: dark;
     }
 
     * { box-sizing: border-box; }
@@ -53,8 +55,11 @@
     a { color: var(--accent); }
     button, input, select, textarea { font: inherit; color: inherit; }
 
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
-    header.top { border-bottom: 1px solid var(--line); background: var(--surface); position: sticky; top: 0; z-index: 5; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+    header.top { border-bottom: 1px solid var(--line); background: var(--surface); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+    body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+    .src-list { margin: 8px 0 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: .85rem; color: var(--ink-soft); list-style: none; }
+    .src-list li { padding: 2px 0; }
     header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
     .brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
     .brand span { color: var(--accent); }
@@ -237,6 +242,7 @@
         <span class="spacer"></span>
         <span class="feed-status" id="feed-status">Loading…</span>
       </div>
+      <ul class="src-list" id="src-list" hidden></ul>
       <p class="intro" style="margin-top:8px">Collected automatically from German giveaway feeds every few hours. Pick what you'd like to win and how you're happy to enter.</p>
 
       <div class="card filters">
@@ -554,7 +560,10 @@
       el.innerHTML = `${live().length} giveaways · updated ${ago(feed.generatedAt)}` +
         (bad.length ? ` · <button type="button" id="src-info">${bad.length} source${bad.length > 1 ? "s" : ""} unavailable</button>` : "");
       const btn = $("#src-info");
-      if (btn) btn.addEventListener("click", () => alert(bad.map(s => `${s.name}: ${s.error}`).join("\n")));
+      const list = $("#src-list");
+      list.innerHTML = bad.map(s => `<li><strong>${esc(s.name)}</strong> — ${esc(s.error)}</li>`).join("");
+      list.hidden = true;
+      if (btn) btn.addEventListener("click", () => { list.hidden = !list.hidden; });
     }
 
     async function loadFeed() {
@@ -756,6 +765,8 @@
       form.elements.risk.value = "";
       $("#dlg-title").textContent = it.id ? "Edit giveaway" : "Add giveaway";
       $("#dlg-delete").hidden = !it.id;
+      $("#dlg-delete").dataset.armed = "";
+      $("#dlg-delete").textContent = "Delete";
       for (const el of form.elements) {
         if (!el.name || !(el.name in it)) continue;
         if (el.type === "checkbox") el.checked = !!it[el.name];
@@ -766,9 +777,11 @@
     }
     $("#add-btn").addEventListener("click", () => openDialog());
     $("#dlg-cancel").addEventListener("click", () => dlg.close());
-    $("#dlg-delete").addEventListener("click", () => {
+    $("#dlg-delete").addEventListener("click", e => {
+      const btn = e.currentTarget;
+      // First click asks, second click deletes.
+      if (btn.dataset.armed !== "1") { btn.dataset.armed = "1"; btn.textContent = "Click again to delete"; return; }
       const id = form.elements.id.value;
-      if (!confirm("Delete this giveaway?")) return;
       items = items.filter(i => i.id !== id);
       save(); dlg.close(); render(); toast("Deleted");
     });
@@ -793,6 +806,10 @@
     });
 
     /* ---------- export / import ---------- */
+    // Downloads are blocked when the page is embedded (e.g. as a claude.ai artifact).
+    let framed = true;
+    try { framed = window.self !== window.top; } catch (e) {}
+    if (framed) $("#export-btn").hidden = true;
     $("#export-btn").addEventListener("click", () => {
       const blob = new Blob([JSON.stringify(items, null, 2)], { type: "application/json" });
       const a = document.createElement("a");
