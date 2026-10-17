@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Giveaway Scout</title>
+  <meta name="description" content="Live giveaways in Germany by category and entry method — plus a tracker and scam check." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#141210" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Giveaways" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* One dark look everywhere: warm charcoal, terracotta accent. */
+    :root {
+      --bg: #141210;
+      --surface: #1e1b18;
+      --raised: #27231f;
+      --ink: #f1ede6;
+      --ink-soft: #a9a196;
+      --line: #36312b;
+      --accent: #e8825c;
+      --on-accent: #1a120d;
+      --accent-soft: #3a2a22;
+      --ok: #6cc28f;
+      --ok-soft: #1f3327;
+      --warn: #e2a84a;
+      --warn-soft: #3a2f1b;
+      --bad: #f08a80;
+      --bad-soft: #3d2220;
+      --scrim: rgba(0, 0, 0, .6);
+      --radius: 10px;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0 0 .4em; }
+    a { color: var(--accent); }
+    button, input, select, textarea { font: inherit; color: inherit; }
+
+    .wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+    header.top { border-bottom: 1px solid var(--line); background: var(--surface); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+    body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+    .src-list { margin: 8px 0 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: .85rem; color: var(--ink-soft); list-style: none; }
+    .src-list li { padding: 2px 0; }
+    header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
+    .brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
+    .brand span { color: var(--accent); }
+    .tabs { display: flex; gap: 4px; }
+    .tab {
+      border: 0; background: none; padding: 8px 12px; border-radius: 999px; cursor: pointer;
+      color: var(--ink-soft); font-weight: 500;
+    }
+    .tab[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
+
+    main { padding: 28px 0 64px; }
+    section[hidden] { display: none; }
+    .intro { color: var(--ink-soft); max-width: 60ch; margin-bottom: 20px; }
+
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+    .grid { display: grid; gap: 14px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 760px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tab { padding: 8px 9px; font-size: .9rem; }
+      .brand { font-size: 1.1rem; }
+    }
+
+    label { display: block; font-size: .82rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 4px; }
+    input[type="text"], input[type="url"], input[type="number"], input[type="date"], input[type="search"], select, textarea {
+      width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px;
+      background: var(--bg);
+    }
+    textarea { min-height: 70px; resize: vertical; }
+    input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 8px;
+      border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent); font-weight: 600; cursor: pointer;
+      text-decoration: none;
+    }
+    .btn.ghost { background: transparent; color: var(--accent); }
+    .btn.small { padding: 5px 10px; font-size: .85rem; font-weight: 500; }
+    .btn.plain { border-color: var(--line); background: transparent; color: var(--ink); }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .spacer { flex: 1; }
+
+    /* Scout */
+    .sources { margin-top: 18px; }
+    .source {
+      display: flex; flex-direction: column; gap: 4px; padding: 14px; border: 1px solid var(--line);
+      border-radius: var(--radius); background: var(--surface); text-decoration: none; color: var(--ink);
+      transition: border-color .15s, transform .15s;
+    }
+    .source:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .source strong { font-size: .98rem; }
+    .source small { color: var(--ink-soft); }
+    .source .go { color: var(--accent); font-size: .82rem; font-weight: 600; margin-top: auto; }
+    .tips { margin-top: 22px; }
+    .tips ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
+    .tips li { margin-bottom: 4px; }
+
+    /* Live feed */
+    .feed-status { color: var(--ink-soft); font-size: .85rem; }
+    .feed-status button { border: 0; background: none; color: var(--accent); cursor: pointer; padding: 0; font-size: inherit; text-decoration: underline; }
+    .filters { display: grid; gap: 12px; }
+    .flabel { font-size: .78rem; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px;
+      padding: 5px 12px; font-size: .85rem; cursor: pointer; display: inline-flex; gap: 6px; align-items: center;
+    }
+    .chip .c { color: var(--ink-soft); font-size: .78rem; }
+    .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .chip[aria-pressed="true"] .c { color: var(--on-accent); opacity: .7; }
+    .chip:disabled { opacity: .4; cursor: default; }
+    .filters .row input[type="search"] { max-width: 260px; }
+    .filters .row select { width: auto; }
+    .group { margin-top: 26px; }
+    .group > h2 { font-size: 1.25rem; display: flex; align-items: baseline; gap: 8px; }
+    .group > h2 .c { font-family: var(--font-body); font-size: .85rem; color: var(--ink-soft); font-weight: 500; }
+    .gcard { display: flex; flex-direction: column; gap: 8px; }
+    .gcard h3 { font-family: var(--font-body); font-size: .98rem; font-weight: 600; margin: 0; line-height: 1.35; }
+    .gcard h3 a { color: var(--ink); text-decoration: none; }
+    .gcard h3 a:hover { color: var(--accent); }
+    .gcard .sum { color: var(--ink-soft); font-size: .85rem; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .gcard .foot { display: flex; gap: 8px; align-items: center; margin-top: auto; padding-top: 4px; }
+    .tagrow { display: flex; flex-wrap: wrap; gap: 5px; }
+    .m { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: .74rem; font-weight: 600; background: var(--line); color: var(--ink); }
+    .m.instagram { background: #3b1d2c; color: #f59ac6; }
+    .m.youtube { background: #3d1c1a; color: #ff8f85; }
+    .m.x { background: #2c2c2c; color: #ececec; }
+    .m.facebook { background: #1c2742; color: #9bb8ff; }
+    .m.tiktok { background: #123432; color: #74d8d0; }
+    .m.reddit { background: #3d2516; color: #ffa36b; }
+    .m.website { background: var(--accent-soft); color: var(--accent); }
+    .m.email, .m.postcard, .m.phone { background: var(--warn-soft); color: var(--warn); }
+    .a { font-size: .74rem; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: 6px; padding: 1px 7px; }
+    .more { margin-top: 28px; }
+    .more summary { cursor: pointer; font-weight: 600; }
+    .more[open] summary { margin-bottom: 14px; }
+
+    /* Stats */
+    .stat { padding: 14px 16px; }
+    .stat .n { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; }
+    .stat .l { color: var(--ink-soft); font-size: .82rem; }
+
+    /* Tracker list */
+    .toolbar { margin: 18px 0 12px; }
+    .toolbar input[type="search"] { max-width: 260px; }
+    .toolbar select { width: auto; }
+    .list { display: grid; gap: 10px; }
+    .item { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; }
+    .item h3 { font-family: var(--font-body); font-size: 1.02rem; margin: 0; }
+    .item h3 a { color: var(--ink); text-decoration: none; }
+    .item h3 a:hover { color: var(--accent); }
+    .meta { color: var(--ink-soft); font-size: .85rem; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+    .item .actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: flex-start; }
+    .item .steps { grid-column: 1 / -1; font-size: .88rem; color: var(--ink-soft); white-space: pre-wrap; }
+    @media (max-width: 760px) { .item { grid-template-columns: 1fr; } .item .actions { justify-content: flex-start; } }
+
+    .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+    .pill.found { background: var(--accent-soft); color: var(--accent); }
+    .pill.entered { background: var(--warn-soft); color: var(--warn); }
+    .pill.won { background: var(--ok-soft); color: var(--ok); }
+    .pill.lost, .pill.expired { background: var(--line); color: var(--ink-soft); }
+    .pill.risk-low { background: var(--ok-soft); color: var(--ok); }
+    .pill.risk-med { background: var(--warn-soft); color: var(--warn); }
+    .pill.risk-high { background: var(--bad-soft); color: var(--bad); }
+    .due-soon { color: var(--bad); font-weight: 600; }
+
+    .empty { text-align: center; color: var(--ink-soft); padding: 40px 16px; border: 1px dashed var(--line); border-radius: var(--radius); }
+
+    /* Vet */
+    .check { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .check:last-child { border-bottom: 0; }
+    .check input { margin-top: 4px; accent-color: var(--accent); width: 16px; height: 16px; flex: none; }
+    .check span { font-size: .93rem; }
+    .check em { font-style: normal; color: var(--ink-soft); font-size: .82rem; display: block; }
+    .verdict { position: sticky; top: 76px; }
+    .meter { height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; margin: 10px 0; }
+    .meter > div { height: 100%; width: 0; transition: width .2s, background .2s; }
+    .verdict .big { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; }
+
+    /* Dialog */
+    dialog { border: 1px solid var(--line); border-radius: 14px; padding: 0; width: min(620px, calc(100vw - 32px)); background: var(--surface); color: var(--ink); }
+    dialog::backdrop { background: var(--scrim); }
+    dialog form { padding: 20px; }
+    dialog .foot { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+    .field { margin-bottom: 12px; }
+    .checkline { display: flex; gap: 8px; align-items: center; font-size: .9rem; color: var(--ink); font-weight: 500; }
+
+    .toast {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 8px; font-size: .9rem;
+      transition: transform .2s, opacity .2s; z-index: 50; max-width: calc(100vw - 32px); opacity: 0; pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    footer { color: var(--ink-soft); font-size: .8rem; text-align: center; padding: 20px 16px 30px; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">Giveaway <span>Scout</span></div>
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" data-tab="scout" aria-selected="true">Scout</button>
+        <button class="tab" role="tab" data-tab="tracker" aria-selected="false">Tracker</button>
+        <button class="tab" role="tab" data-tab="vet" aria-selected="false">Vet</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- ================= SCOUT ================= -->
+    <section id="tab-scout">
+      <div class="row" style="align-items:baseline">
+        <h1 style="margin:0">Giveaways in Germany</h1>
+        <span class="spacer"></span>
+        <span class="feed-status" id="feed-status">Loading…</span>
+      </div>
+      <ul class="src-list" id="src-list" hidden></ul>
+      <p class="intro" style="margin-top:8px">Collected automatically from German giveaway feeds every few hours. Pick what you'd like to win and how you're happy to enter.</p>
+
+      <div class="card filters">
+        <div><div class="flabel">Category</div><div class="chips" id="f-cats"></div></div>
+        <div><div class="flabel">Enter via</div><div class="chips" id="f-methods"></div></div>
+        <div><div class="flabel">What you do</div><div class="chips" id="f-actions"></div></div>
+        <div class="row">
+          <input type="search" id="feed-q" placeholder="Search prizes…" aria-label="Search prizes" />
+          <select id="feed-sort" aria-label="Sort">
+            <option value="new">Newest first</option>
+            <option value="ending">Ending soonest</option>
+            <option value="az">A–Z</option>
+          </select>
+          <label class="checkline" style="margin:0"><input type="checkbox" id="feed-hide-tracked" /> Hide ones I'm tracking</label>
+          <span class="spacer"></span>
+          <button class="btn plain small" id="feed-clear">Clear filters</button>
+        </div>
+      </div>
+
+      <div id="feed"></div>
+
+      <details class="card more">
+        <summary>Search more places yourself</summary>
+        <p style="color:var(--ink-soft);margin-top:0">Instagram, X, YouTube and Facebook don't publish feeds, so check them directly. Searches are set to Germany and recent posts.</p>
+        <div style="max-width:360px">
+          <label for="q">Prize keyword</label>
+          <input type="search" id="q" placeholder="e.g. Dyson, Konzert, Hotel" />
+        </div>
+        <div class="sources grid grid-3" id="sources"></div>
+      </details>
+
+      <div class="card tips">
+        <h3>Scouting tips</h3>
+        <ul>
+          <li>Smaller giveaways (brand Instagram posts, local radio, niche blogs) have far fewer entrants than big national ones.</li>
+          <li>Hit "+ Track" on anything you like — deadlines are easy to miss.</li>
+          <li>Mark daily-entry giveaways as "daily" so they show up at the top every day.</li>
+          <li>Use a separate email address for entries to keep your main inbox clean.</li>
+          <li>Run anything unfamiliar through the Vet tab before sharing personal details.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= TRACKER ================= -->
+    <section id="tab-tracker" hidden>
+      <div class="row">
+        <h1 style="margin:0">My giveaways</h1>
+        <span class="spacer"></span>
+        <button class="btn" id="add-btn">+ Add giveaway</button>
+      </div>
+
+      <div class="grid grid-4" style="margin-top:18px">
+        <div class="card stat"><div class="n" id="s-active">0</div><div class="l">Active</div></div>
+        <div class="card stat"><div class="n" id="s-today">0</div><div class="l">To enter today</div></div>
+        <div class="card stat"><div class="n" id="s-won">0</div><div class="l">Won</div></div>
+        <div class="card stat"><div class="n" id="s-value">€0</div><div class="l">Value won</div></div>
+      </div>
+
+      <div class="row toolbar">
+        <input type="search" id="filter-q" placeholder="Search…" aria-label="Search giveaways" />
+        <select id="filter-status" aria-label="Filter by status">
+          <option value="open">Open (found + entered)</option>
+          <option value="">All</option>
+          <option value="found">Found</option>
+          <option value="entered">Entered</option>
+          <option value="won">Won</option>
+          <option value="lost">Lost</option>
+          <option value="expired">Expired</option>
+        </select>
+        <select id="sort" aria-label="Sort">
+          <option value="deadline">Deadline soonest</option>
+          <option value="value">Highest value</option>
+          <option value="added">Recently added</option>
+        </select>
+        <span class="spacer"></span>
+        <button class="btn plain small" id="export-btn">Export</button>
+        <label class="btn plain small" style="margin:0;color:var(--ink)">Import<input type="file" id="import-file" accept="application/json" hidden /></label>
+      </div>
+
+      <div class="list" id="list"></div>
+    </section>
+
+    <!-- ================= VET ================= -->
+    <section id="tab-vet" hidden>
+      <h1>Is this giveaway legit?</h1>
+      <p class="intro">Tick everything that applies to the giveaway you're looking at. Scout weighs the red flags and gives you a risk score.</p>
+      <div class="grid grid-2" style="align-items:start">
+        <div class="card" id="checks"></div>
+        <div class="card verdict">
+          <div class="l" style="color:var(--ink-soft);font-size:.82rem;font-weight:600">RISK</div>
+          <div class="big" id="v-title">Low risk</div>
+          <div class="meter"><div id="v-bar"></div></div>
+          <p id="v-text" style="color:var(--ink-soft);margin:0"></p>
+          <div class="row" style="margin-top:14px">
+            <button class="btn plain small" id="vet-reset">Reset</button>
+            <button class="btn small" id="vet-save">Save to a new giveaway</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Your giveaways are saved in this browser only. Use Export to back them up or move them to another device.</footer>
+
+  <!-- ================= DIALOG ================= -->
+  <dialog id="dlg">
+    <form method="dialog" id="form">
+      <h2 id="dlg-title">Add giveaway</h2>
+      <input type="hidden" name="id" />
+      <input type="hidden" name="risk" />
+      <div class="field">
+        <label for="f-title">Title *</label>
+        <input type="text" id="f-title" name="title" required placeholder="e.g. Win a Dyson Airwrap" />
+      </div>
+      <div class="grid grid-2">
+        <div class="field"><label for="f-url">Link</label><input type="url" id="f-url" name="url" placeholder="https://" /></div>
+        <div class="field"><label for="f-source">Where you found it</label><input type="text" id="f-source" name="source" placeholder="Instagram, Gleam, blog…" /></div>
+      </div>
+      <div class="grid grid-3">
+        <div class="field"><label for="f-deadline">Ends</label><input type="date" id="f-deadline" name="deadline" /></div>
+        <div class="field"><label for="f-value">Prize value (€)</label><input type="number" id="f-value" name="value" min="0" step="1" /></div>
+        <div class="field">
+          <label for="f-status">Status</label>
+          <select id="f-status" name="status">
+            <option value="found">Found</option>
+            <option value="entered">Entered</option>
+            <option value="won">Won</option>
+            <option value="lost">Lost</option>
+            <option value="expired">Expired</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-steps">How to enter / notes</label>
+        <textarea id="f-steps" name="steps" placeholder="Follow @brand, tag 2 friends, like the post…"></textarea>
+      </div>
+      <label class="checkline"><input type="checkbox" name="daily" /> Can be entered daily</label>
+      <div class="foot">
+        <button type="button" class="btn plain" id="dlg-delete" style="margin-right:auto;color:var(--bad);border-color:var(--bad)" hidden>Delete</button>
+        <button type="button" class="btn plain" id="dlg-cancel">Cancel</button>
+        <button type="submit" class="btn" value="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    /* ---------- storage ---------- */
+    const KEY = "giveaway-scout:v1";
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; }
+    }
+    function save() {
+      try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (e) {}
+    }
+    let items = load();
+
+    const $ = (s, r = document) => r.querySelector(s);
+    const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const todayStr = () => new Date().toISOString().slice(0, 10);
+    const money = n => "€" + Math.round(n || 0).toLocaleString();
+
+    function toast(msg) {
+      const t = $("#toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(toast._t);
+      toast._t = setTimeout(() => t.classList.remove("show"), 2200);
+    }
+
+    /* ---------- tabs ---------- */
+    function showTab(name) {
+      document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === name));
+      ["scout", "tracker", "vet"].forEach(n => $("#tab-" + n).hidden = n !== name);
+      try { localStorage.setItem(KEY + ":tab", name); } catch (e) {}
+      if (name === "tracker") render();
+      if (name === "scout" && feed.generatedAt) renderFeed();
+    }
+    document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => showTab(b.dataset.tab)));
+
+    /* ---------- scout: live feed ---------- */
+    const CAT_LABELS = {
+      household: "Household", tech: "Tech & games", music: "Music", events: "Events & tickets",
+      experiences: "Experiences", stays: "Stays & hotels", travel: "Travel", beauty_fashion: "Beauty & fashion",
+      food_drink: "Food & drink", family: "Kids & family", cash_vouchers: "Cash & vouchers", sport: "Sport & outdoor",
+      books: "Books & media", other: "Other"
+    };
+    const METHOD_LABELS = {
+      instagram: "Instagram", youtube: "YouTube", x: "X", facebook: "Facebook", tiktok: "TikTok", reddit: "Reddit",
+      website: "Website", email: "Email", postcard: "Postcard", phone: "Phone / SMS"
+    };
+    const ACTION_LABELS = {
+      comment: "Comment", like: "Like", follow: "Follow", tag: "Tag friends", share: "Share",
+      answer: "Answer a question", form: "Fill a form"
+    };
+    const FKEY = KEY + ":feed-filters";
+
+    let feed = { items: [], sources: [], generatedAt: null };
+    let ff = { cat: "", methods: [], actions: [], q: "", sort: "new", hideTracked: false };
+    try { Object.assign(ff, JSON.parse(localStorage.getItem(FKEY)) || {}); } catch (e) {}
+    function saveFilters() { try { localStorage.setItem(FKEY, JSON.stringify(ff)); } catch (e) {} }
+
+    function ago(iso) {
+      const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+      if (m < 60) return `${Math.max(1, m)} min ago`;
+      const h = Math.round(m / 60);
+      if (h < 24) return `${h} h ago`;
+      const d = Math.round(h / 24);
+      return `${d} day${d === 1 ? "" : "s"} ago`;
+    }
+    const isTracked = it => items.some(t => t.feedId === it.id);
+    const live = () => feed.items.filter(it => !it.deadline || daysLeft(it.deadline) >= 0);
+
+    // Items matching every filter except `skip`, so chip counts show what you'd get by clicking.
+    function matching(skip) {
+      const q = ff.q.trim().toLowerCase();
+      return live().filter(it => {
+        if (skip !== "cat" && ff.cat && !it.categories.includes(ff.cat)) return false;
+        if (skip !== "methods" && ff.methods.length && !ff.methods.some(m => it.methods.includes(m))) return false;
+        if (skip !== "actions" && ff.actions.length && !ff.actions.some(a => it.actions.includes(a))) return false;
+        if (ff.hideTracked && isTracked(it)) return false;
+        if (q && !`${it.title} ${it.summary} ${it.publisher}`.toLowerCase().includes(q)) return false;
+        return true;
+      });
+    }
+    function count(list, field, key) { return list.filter(it => it[field].includes(key)).length; }
+
+    function renderChips() {
+      const forCats = matching("cat"), forMethods = matching("methods"), forActions = matching("actions");
+      $("#f-cats").innerHTML =
+        `<button class="chip" data-cat="" aria-pressed="${!ff.cat}">All <span class="c">${forCats.length}</span></button>` +
+        Object.entries(CAT_LABELS).map(([k, l]) => {
+          const n = count(forCats, "categories", k);
+          return `<button class="chip" data-cat="${k}" aria-pressed="${ff.cat === k}" ${n || ff.cat === k ? "" : "disabled"}>${l} <span class="c">${n}</span></button>`;
+        }).join("");
+      $("#f-methods").innerHTML = Object.entries(METHOD_LABELS).map(([k, l]) => {
+        const n = count(forMethods, "methods", k), on = ff.methods.includes(k);
+        return `<button class="chip" data-method="${k}" aria-pressed="${on}" ${n || on ? "" : "disabled"}>${l} <span class="c">${n}</span></button>`;
+      }).join("");
+      $("#f-actions").innerHTML = Object.entries(ACTION_LABELS).map(([k, l]) => {
+        const n = count(forActions, "actions", k), on = ff.actions.includes(k);
+        return `<button class="chip" data-action="${k}" aria-pressed="${on}" ${n || on ? "" : "disabled"}>${l} <span class="c">${n}</span></button>`;
+      }).join("");
+    }
+
+    function sortFeed(list) {
+      const by = {
+        new: (a, b) => Date.parse(b.published) - Date.parse(a.published),
+        ending: (a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999") || Date.parse(b.published) - Date.parse(a.published),
+        az: (a, b) => a.title.localeCompare(b.title, "de")
+      };
+      return list.slice().sort(by[ff.sort] || by.new);
+    }
+
+    function feedCard(it) {
+      const dl = daysLeft(it.deadline);
+      let when = `Found ${ago(it.firstSeen || it.published)}`;
+      if (it.deadline) {
+        when = dl === 0 ? `<span class="due-soon">Ends today</span>`
+          : dl <= 3 ? `<span class="due-soon">Ends in ${dl} day${dl > 1 ? "s" : ""}</span>`
+          : `Ends ${new Date(it.deadline + "T12:00:00").toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`;
+      }
+      const tracked = isTracked(it);
+      return `
+        <article class="card gcard" data-fid="${esc(it.id)}">
+          <div class="tagrow">
+            ${it.methods.map(m => `<span class="m ${esc(m)}">${esc(METHOD_LABELS[m] || m)}</span>`).join("")}
+            ${it.actions.map(a => `<span class="a">${esc(ACTION_LABELS[a] || a)}</span>`).join("")}
+            ${it.eligibility === "worldwide" ? `<span class="a">Worldwide</span>` : ""}
+          </div>
+          <h3><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${esc(it.title)}</a></h3>
+          ${it.summary && it.summary.toLowerCase() !== it.title.toLowerCase() ? `<p class="sum">${esc(it.summary)}</p>` : ""}
+          <div class="meta"><span>${when}</span><span>${esc(it.publisher || it.source)}</span></div>
+          <div class="foot">
+            <a class="btn small ghost" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">Open</a>
+            <button class="btn small ${tracked ? "plain" : ""}" data-track ${tracked ? "disabled" : ""}>${tracked ? "Tracking ✓" : "+ Track"}</button>
+          </div>
+        </article>`;
+    }
+
+    function renderFeed() {
+      renderChips();
+      $("#feed-q").value = ff.q;
+      $("#feed-sort").value = ff.sort;
+      $("#feed-hide-tracked").checked = ff.hideTracked;
+
+      if (!feed.generatedAt) {
+        $("#feed").innerHTML = `<div class="empty" style="margin-top:20px">The live feed hasn't been built yet. It refreshes automatically every 4 hours — meanwhile, use “Search more places yourself” below.</div>`;
+        return;
+      }
+      const list = sortFeed(matching());
+      if (!list.length) {
+        $("#feed").innerHTML = `<div class="empty" style="margin-top:20px">No giveaways match these filters right now.</div>`;
+        return;
+      }
+      // "All" groups each giveaway under its main category; a chosen category shows a flat list.
+      const groups = ff.cat ? [[ff.cat, list]] : Object.keys(CAT_LABELS)
+        .map(k => [k, list.filter(it => (it.categories[0] || "other") === k)])
+        .filter(([, l]) => l.length);
+      $("#feed").innerHTML = groups.map(([k, l]) => `
+        <section class="group">
+          <h2>${esc(CAT_LABELS[k] || k)} <span class="c">${l.length}</span></h2>
+          <div class="grid grid-3">${l.map(feedCard).join("")}</div>
+        </section>`).join("");
+    }
+
+    function renderFeedStatus() {
+      const el = $("#feed-status");
+      if (!feed.generatedAt) { el.textContent = ""; return; }
+      const bad = feed.sources.filter(s => !s.ok);
+      el.innerHTML = `${live().length} giveaways · updated ${ago(feed.generatedAt)}` +
+        (bad.length ? ` · <button type="button" id="src-info">${bad.length} source${bad.length > 1 ? "s" : ""} unavailable</button>` : "");
+      const btn = $("#src-info");
+      const list = $("#src-list");
+      list.innerHTML = bad.map(s => `<li><strong>${esc(s.name)}</strong> — ${esc(s.error)}</li>`).join("");
+      list.hidden = true;
+      if (btn) btn.addEventListener("click", () => { list.hidden = !list.hidden; });
+    }
+
+    async function loadFeed() {
+      try {
+        const res = await fetch("data/giveaways.json", { cache: "no-cache" });
+        if (!res.ok) throw new Error(res.status);
+        feed = await res.json();
+        feed.items = feed.items || [];
+        feed.sources = feed.sources || [];
+      } catch (e) {
+        $("#feed-status").textContent = "";
+        $("#feed").innerHTML = `<div class="empty" style="margin-top:20px">Couldn't load the live feed. Open this page from the website (not as a local file) to see it.</div>`;
+        renderChips();
+        return;
+      }
+      renderFeedStatus();
+      renderFeed();
+    }
+
+    function setFilter(patch) { Object.assign(ff, patch); saveFilters(); renderFeed(); }
+    const toggle = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : arr.concat(v);
+    $("#f-cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b) setFilter({ cat: b.dataset.cat }); });
+    $("#f-methods").addEventListener("click", e => { const b = e.target.closest("[data-method]"); if (b) setFilter({ methods: toggle(ff.methods, b.dataset.method) }); });
+    $("#f-actions").addEventListener("click", e => { const b = e.target.closest("[data-action]"); if (b) setFilter({ actions: toggle(ff.actions, b.dataset.action) }); });
+    $("#feed-q").addEventListener("input", e => setFilter({ q: e.target.value }));
+    $("#feed-sort").addEventListener("input", e => setFilter({ sort: e.target.value }));
+    $("#feed-hide-tracked").addEventListener("change", e => setFilter({ hideTracked: e.target.checked }));
+    $("#feed-clear").addEventListener("click", () => setFilter({ cat: "", methods: [], actions: [], q: "" }));
+
+    $("#feed").addEventListener("click", e => {
+      const btn = e.target.closest("[data-track]");
+      if (!btn) return;
+      const it = feed.items.find(i => i.id === btn.closest("[data-fid]").dataset.fid);
+      if (!it || isTracked(it)) return;
+      const how = [it.methods.map(m => METHOD_LABELS[m] || m).join(", "), it.actions.map(a => ACTION_LABELS[a] || a).join(", ")]
+        .filter(Boolean).join(" — ");
+      items.push({
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), added: Date.now(), feedId: it.id,
+        title: it.title, url: it.url, source: it.publisher || it.source, deadline: it.deadline || "", value: "",
+        status: "found", steps: how ? `Enter via: ${how}` : "", daily: false, risk: "", lastEntered: ""
+      });
+      save(); renderFeed(); toast("Added to your tracker");
+    });
+
+    /* ---------- scout: manual searches ---------- */
+    function sources() {
+      const kw = $("#q").value.trim();
+      const enc = encodeURIComponent;
+      const tag = kw.split(/\s+/)[0].toLowerCase().replace(/[^a-z0-9äöüß]/g, "");
+      return [
+        { name: "Instagram", note: tag ? `#${tag}gewinnspiel` : "#gewinnspiel hashtag",
+          url: `https://www.instagram.com/explore/tags/${enc(tag ? tag + "gewinnspiel" : "gewinnspiel")}/` },
+        { name: "X / Twitter", note: "Latest German giveaway posts",
+          url: `https://x.com/search?q=${enc(`${kw} (gewinnspiel OR verlosung OR #gewinnspiel) lang:de`)}&f=live` },
+        { name: "YouTube", note: "Gewinnspiel videos from this week",
+          url: `https://www.youtube.com/results?search_query=${enc(`${kw} gewinnspiel`)}&sp=EgIIAw%253D%253D` },
+        { name: "TikTok", note: "#gewinnspiel posts",
+          url: `https://www.tiktok.com/search?q=${enc(`${kw} gewinnspiel`)}` },
+        { name: "Facebook", note: "Page and group giveaways",
+          url: `https://www.facebook.com/search/posts/?q=${enc(`${kw} gewinnspiel`)}` },
+        { name: "Google — past week", note: "Giveaway pages from German sites",
+          url: `https://www.google.de/search?q=${enc(`${kw} gewinnspiel teilnahmeschluss`)}&tbs=qdr:w&hl=de` }
+      ];
+    }
+    function renderSources() {
+      $("#sources").innerHTML = sources().map(s => `
+        <a class="source" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">
+          <strong>${esc(s.name)}</strong>
+          <small>${esc(s.note)}</small>
+          <span class="go">Search →</span>
+        </a>`).join("");
+    }
+    $("#q").addEventListener("input", renderSources);
+    renderSources();
+
+    /* ---------- tracker ---------- */
+    function daysLeft(d) {
+      if (!d) return null;
+      const ms = new Date(d + "T23:59:59") - new Date();
+      return Math.ceil(ms / 86400000) - (ms > 0 ? 1 : 0);
+    }
+
+    // Auto-expire open giveaways whose deadline has passed.
+    function autoExpire() {
+      let changed = false;
+      items.forEach(it => {
+        if (it.status === "found" && it.deadline && daysLeft(it.deadline) < 0) {
+          it.status = "expired";
+          changed = true;
+        }
+      });
+      if (changed) save();
+    }
+
+    function needsEntryToday(it) {
+      if (!(it.status === "found" || it.status === "entered")) return false;
+      if (it.deadline && daysLeft(it.deadline) < 0) return false;
+      if (it.status === "found") return true;
+      return it.daily && it.lastEntered !== todayStr();
+    }
+
+    function riskPill(score) {
+      if (score == null || score === "") return "";
+      const s = Number(score);
+      const cls = s >= 50 ? "risk-high" : s >= 20 ? "risk-med" : "risk-low";
+      const txt = s >= 50 ? "High risk" : s >= 20 ? "Some risk" : "Looks legit";
+      return `<span class="pill ${cls}">${txt}</span>`;
+    }
+
+    function render() {
+      autoExpire();
+      const q = $("#filter-q").value.trim().toLowerCase();
+      const st = $("#filter-status").value;
+      const sort = $("#sort").value;
+
+      let list = items.filter(it => {
+        if (st === "open" && !(it.status === "found" || it.status === "entered")) return false;
+        if (st && st !== "open" && it.status !== st) return false;
+        if (q && !`${it.title} ${it.source} ${it.steps}`.toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      list.sort((a, b) => {
+        const ta = needsEntryToday(a), tb = needsEntryToday(b);
+        if (ta !== tb) return ta ? -1 : 1;
+        if (sort === "value") return (b.value || 0) - (a.value || 0);
+        if (sort === "added") return (b.added || 0) - (a.added || 0);
+        return (a.deadline || "9999") .localeCompare(b.deadline || "9999");
+      });
+
+      const active = items.filter(i => i.status === "found" || i.status === "entered");
+      $("#s-active").textContent = active.length;
+      $("#s-today").textContent = items.filter(needsEntryToday).length;
+      $("#s-won").textContent = items.filter(i => i.status === "won").length;
+      $("#s-value").textContent = money(items.filter(i => i.status === "won").reduce((s, i) => s + (Number(i.value) || 0), 0));
+
+      if (!list.length) {
+        $("#list").innerHTML = `<div class="empty">${items.length
+          ? "No giveaways match these filters."
+          : "No giveaways yet. Find some in the Scout tab, then add them here."}</div>`;
+        return;
+      }
+
+      $("#list").innerHTML = list.map(it => {
+        const dl = daysLeft(it.deadline);
+        let due = "";
+        if (it.deadline) {
+          if (dl < 0) due = `Ended ${esc(it.deadline)}`;
+          else if (dl === 0) due = `<span class="due-soon">Ends today</span>`;
+          else if (dl <= 3) due = `<span class="due-soon">${dl} day${dl > 1 ? "s" : ""} left</span>`;
+          else due = `${dl} days left`;
+        }
+        const today = needsEntryToday(it);
+        const enterLabel = it.status === "found" ? "Mark entered" : "Entered today";
+        return `
+        <article class="card item" data-id="${esc(it.id)}">
+          <div>
+            <h3>${it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${esc(it.title)}</a>` : esc(it.title)}</h3>
+            <div class="meta">
+              <span class="pill ${esc(it.status)}">${esc(it.status)}</span>
+              ${it.daily ? `<span class="pill found">daily</span>` : ""}
+              ${riskPill(it.risk)}
+              ${due ? `<span>${due}</span>` : ""}
+              ${it.value ? `<span>${money(it.value)}</span>` : ""}
+              ${it.source ? `<span>via ${esc(it.source)}</span>` : ""}
+            </div>
+          </div>
+          <div class="actions">
+            ${today ? `<button class="btn small" data-act="enter">${enterLabel}</button>` : ""}
+            ${it.status === "entered" ? `<button class="btn plain small" data-act="won">Won 🎉</button>` : ""}
+            <button class="btn plain small" data-act="edit">Edit</button>
+          </div>
+          ${it.steps ? `<div class="steps">${esc(it.steps)}</div>` : ""}
+        </article>`;
+      }).join("");
+    }
+
+    $("#list").addEventListener("click", e => {
+      const btn = e.target.closest("button[data-act]");
+      if (!btn) return;
+      const id = btn.closest("[data-id]").dataset.id;
+      const it = items.find(i => i.id === id);
+      if (!it) return;
+      const act = btn.dataset.act;
+      if (act === "edit") return openDialog(it);
+      if (act === "enter") { it.status = "entered"; it.lastEntered = todayStr(); toast("Logged your entry"); }
+      if (act === "won") { it.status = "won"; toast("Congratulations! 🎉"); }
+      save(); render();
+    });
+
+    ["filter-q", "filter-status", "sort"].forEach(id => $("#" + id).addEventListener("input", render));
+
+    /* ---------- dialog ---------- */
+    const dlg = $("#dlg"), form = $("#form");
+    function openDialog(it = {}) {
+      form.reset();
+      // Hidden inputs aren't cleared by reset().
+      form.elements.id.value = "";
+      form.elements.risk.value = "";
+      $("#dlg-title").textContent = it.id ? "Edit giveaway" : "Add giveaway";
+      $("#dlg-delete").hidden = !it.id;
+      $("#dlg-delete").dataset.armed = "";
+      $("#dlg-delete").textContent = "Delete";
+      for (const el of form.elements) {
+        if (!el.name || !(el.name in it)) continue;
+        if (el.type === "checkbox") el.checked = !!it[el.name];
+        else el.value = it[el.name] ?? "";
+      }
+      if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+      $("#f-title").focus();
+    }
+    $("#add-btn").addEventListener("click", () => openDialog());
+    $("#dlg-cancel").addEventListener("click", () => dlg.close());
+    $("#dlg-delete").addEventListener("click", e => {
+      const btn = e.currentTarget;
+      // First click asks, second click deletes.
+      if (btn.dataset.armed !== "1") { btn.dataset.armed = "1"; btn.textContent = "Click again to delete"; return; }
+      const id = form.elements.id.value;
+      items = items.filter(i => i.id !== id);
+      save(); dlg.close(); render(); toast("Deleted");
+    });
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const f = form.elements;
+      const data = {
+        title: f.title.value.trim(), url: f.url.value.trim(), source: f.source.value.trim(),
+        deadline: f.deadline.value, value: f.value.value ? Number(f.value.value) : "",
+        status: f.status.value, steps: f.steps.value.trim(), daily: f.daily.checked,
+        risk: f.risk.value === "" ? "" : Number(f.risk.value)
+      };
+      if (!data.title) return;
+      const id = f.id.value;
+      if (id) {
+        Object.assign(items.find(i => i.id === id), data);
+      } else {
+        items.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), added: Date.now(), ...data,
+          lastEntered: data.status === "entered" ? todayStr() : "" });
+      }
+      save(); dlg.close(); showTab("tracker"); toast(id ? "Saved" : "Added to tracker");
+    });
+
+    /* ---------- export / import ---------- */
+    // Downloads are blocked when the page is embedded (e.g. as a claude.ai artifact).
+    let framed = true;
+    try { framed = window.self !== window.top; } catch (e) {}
+    if (framed) $("#export-btn").hidden = true;
+    $("#export-btn").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(items, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `giveaway-scout-${todayStr()}.json`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    });
+    $("#import-file").addEventListener("change", async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      try {
+        const data = JSON.parse(await file.text());
+        if (!Array.isArray(data)) throw new Error();
+        const known = new Set(items.map(i => i.id));
+        const fresh = data.filter(d => d && d.id && d.title && !known.has(d.id));
+        items = items.concat(fresh);
+        save(); render(); toast(`Imported ${fresh.length} giveaway${fresh.length === 1 ? "" : "s"}`);
+      } catch (err) { toast("That file couldn't be read"); }
+      e.target.value = "";
+    });
+
+    /* ---------- vet ---------- */
+    const FLAGS = [
+      { w: 45, t: "Asks you to pay a fee, shipping cost or 'tax' to claim", d: "Legit giveaways never charge winners up front." },
+      { w: 40, t: "Asks for bank, card or login details", d: "Or a code sent to your phone." },
+      { w: 30, t: "Winner DM'd you from an account that isn't the official one", d: "Look-alike handles, extra letters, few followers." },
+      { w: 20, t: "Prize is wildly valuable for a tiny or brand-new account", d: "e.g. iPhones from an account with 300 followers." },
+      { w: 15, t: "No official rules, end date or organiser named", d: "" },
+      { w: 15, t: "Pushes you to act within minutes or hours", d: "Urgency is a classic pressure tactic." },
+      { w: 10, t: "Link goes to a site unrelated to the brand", d: "Or a shortened link that hides the destination." },
+      { w: 10, t: "Requires installing an app or extension to enter", d: "" },
+      { w: 5,  t: "Asks for your full address or ID before you've won", d: "Email to enter is normal; more than that is not." }
+    ];
+    const GOOD = [
+      { w: -10, t: "Run by a verified / official brand account", d: "" },
+      { w: -8,  t: "Clear rules with eligibility, end date and how winners are picked", d: "" },
+      { w: -5,  t: "Brand has announced past winners publicly", d: "" }
+    ];
+
+    function renderChecks() {
+      const mk = (f, i, g) => `<label class="check"><input type="checkbox" data-w="${f.w}" data-k="${g}${i}" />
+        <span>${esc(f.t)}${f.d ? `<em>${esc(f.d)}</em>` : ""}</span></label>`;
+      $("#checks").innerHTML =
+        `<h3>Red flags</h3>` + FLAGS.map((f, i) => mk(f, i, "f")).join("") +
+        `<h3 style="margin-top:16px">Good signs</h3>` + GOOD.map((f, i) => mk(f, i, "g")).join("");
+    }
+    function vetScore() {
+      let s = 0;
+      document.querySelectorAll("#checks input:checked").forEach(c => s += Number(c.dataset.w));
+      return Math.max(0, Math.min(100, s));
+    }
+    function renderVerdict() {
+      const s = vetScore();
+      const bar = $("#v-bar");
+      bar.style.width = Math.max(4, s) + "%";
+      let title, text, color;
+      if (s >= 50) { title = "High risk"; color = "var(--bad)"; text = "This has the hallmarks of a scam. Don't pay anything or share financial details — report the account to the platform."; }
+      else if (s >= 20) { title = "Some risk"; color = "var(--warn)"; text = "Proceed carefully. Verify the organiser through the brand's official website or account before entering."; }
+      else { title = "Low risk"; color = "var(--ok)"; text = "Nothing alarming. Still never pay to claim a prize."; }
+      $("#v-title").textContent = title;
+      $("#v-title").style.color = color;
+      bar.style.background = color;
+      $("#v-text").textContent = text;
+    }
+    renderChecks();
+    renderVerdict();
+    $("#checks").addEventListener("change", renderVerdict);
+    $("#vet-reset").addEventListener("click", () => {
+      document.querySelectorAll("#checks input").forEach(c => c.checked = false);
+      renderVerdict();
+    });
+    $("#vet-save").addEventListener("click", () => openDialog({ risk: vetScore() }));
+
+    /* ---------- init ---------- */
+    let startTab = "scout";
+    try { startTab = localStorage.getItem(KEY + ":tab") || "scout"; } catch (e) {}
+    showTab(["scout", "tracker", "vet"].includes(startTab) ? startTab : "scout");
+    loadFeed();
+
+    /* ---------- offline / install support ---------- */
+    if ("serviceWorker" in navigator && location.protocol === "https:" && !framed) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
+  })();
+  </script>
+</body>
+</html>

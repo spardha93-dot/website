@@ -1,0 +1,41 @@
+name: Giveaway Scout feed
+
+# Refreshes giveaway-scout/data/giveaways.json from the feeds in giveaway-scout/feed/sources.json.
+# Scheduled runs only happen on the repository's default branch.
+on:
+  schedule:
+    - cron: "17 */4 * * *"   # every 4 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: giveaway-feed
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build feed
+        run: node giveaway-scout/feed/build-feed.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- giveaway-scout/data/giveaways.json; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "giveaway-scout-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add giveaway-scout/data/giveaways.json
+          git commit -m "Update giveaway feed"
+          git push
